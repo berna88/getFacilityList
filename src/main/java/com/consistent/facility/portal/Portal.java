@@ -1,12 +1,8 @@
 package com.consistent.facility.portal;
 
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 
 import com.consistent.facility.interfaces.Constants;
-import com.liferay.journal.model.JournalArticle;
-import com.liferay.journal.model.impl.JournalArticleImpl;
 import com.liferay.journal.model.impl.JournalFolderImpl;
 import com.liferay.journal.service.JournalArticleResourceLocalServiceUtil;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
@@ -42,18 +38,21 @@ public abstract class Portal implements Constants{
 			List<JournalFolderImpl> list = JournalArticleResourceLocalServiceUtil.dynamicQuery(dynamicQuery);
 			folderId = list.get(0).getFolderId();
 			
-		} catch (Exception e) {
+		} catch (IndexOutOfBoundsException e) {
 			// TODO: handle exception
+			log.error("Codigo de hotel no encontrado");
 			log.error("getFolderId: "+e);
 		}
 		log.info("FolderId por codigo: "+folderId);
 		return folderId;
 	}
+	
 	/**
 	 * @author bernardohernandez
 	 * @return Devuelve el identificador de la carpeta facility del hotelcode en Long
 	 */
-	private Long getFolderIdFacility(){
+	
+	protected Long getFolderIdFacility(){
 		log.info("<-- getFolderIdFacility -->");
 		Long folderId = null;
 		try {
@@ -70,30 +69,5 @@ public abstract class Portal implements Constants{
 		log.info("FolderId de facility: "+folderId);
 		return folderId;
 	}
-	
-	/**
-	 * @author bernardohernandez
-	 * @return Devuelve una lista de los facilities
-	 */
-	
-	public HashSet<JournalArticle> getFacilities(){
-		log.info("<-- getFacilities -->");
-		HashSet<JournalArticle> articlesRecovery = new HashSet<>();
-		try {
-			DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(JournalArticleImpl.class, "JournalArticle",PortalClassLoaderUtil.getClassLoader());
-			dynamicQuery.add(RestrictionsFactoryUtil.eq("folderId", getFolderIdFacility()));
-			HashSet<JournalArticle> articles = new HashSet<>(JournalArticleResourceLocalServiceUtil.dynamicQuery(dynamicQuery));
-			log.info("Tamaño de articulos: "+articles.size());
-			Iterator<JournalArticle> iterator=  articles.iterator();
-			if(iterator.hasNext()){
-				articlesRecovery.add(iterator.next());
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			log.error("getFacilities: "+e);
-		}
-		return articlesRecovery;
 		
-	}
-	
 }

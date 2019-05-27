@@ -1,5 +1,6 @@
 package com.consistent.facility.application;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
+import javax.xml.stream.XMLStreamException;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -36,7 +38,9 @@ public class GetFacilityListApplication extends Application{
 	
 	/**
 	 * @author bernardohernandez
-	 * @return Devuelve el XML en tipo cadena
+	 * @return Devuelve el XML en tipo String
+	 * @throws IOException 
+	 * @throws XMLStreamException 
 	 */
 	@GET
 	@Path("/getFacilityList")
@@ -45,18 +49,16 @@ public class GetFacilityListApplication extends Application{
 		@QueryParam("siteId") long siteId,
 		@QueryParam("language") String language,
 		@QueryParam("hotelcode") String hotelcode,
-		@QueryParam("channel") String channel) {
+		@QueryParam("channel") String channel) throws XMLStreamException, IOException {
 		log.info("<-- getFacilityList -->");
 		
-		//Asignando constantes
+		//Asignando Variables
 		Constants.GROUP_ID = siteId;
 		Constants.LANGUAGE = language;
 		Constants.HOTEL_CODE = hotelcode;
 	
-
 		XML xml = new Facility();
-		log.info(xml.getMapping());
-		return "";
+		return xml.getContent();
 	}
 
 }
