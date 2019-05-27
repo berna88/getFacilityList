@@ -60,5 +60,22 @@ public class GetFacilityListApplication extends Application{
 		XML xml = new Facility();
 		return xml.getContent();
 	}
+	
+	@GET
+	@Path("/getFacilityList")
+	@Produces(MediaType.APPLICATION_XML)
+	public String getFacilityListType(
+			@QueryParam("siteId") long siteId,
+			@QueryParam("language") String language,
+			@QueryParam("hotelcode") String hotelcode,
+			@QueryParam("channel") String channel,
+			@QueryParam("keyword") String keyword){
+		//Asignando Variables
+				Constants.GROUP_ID = siteId;
+				Constants.LANGUAGE = language;
+				Constants.HOTEL_CODE = hotelcode;
+		
+		return "";
+	}
 
 }

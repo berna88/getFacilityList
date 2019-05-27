@@ -11,6 +11,7 @@ public class Constants {
 	public static Long GROUP_ID = null;
 	public static String LANGUAGE = "";
 	public static String HOTEL_CODE = "";
+	public static String KEYWORD = "";
 	
 	//Metodo para obtener el locate
 	public static String getLanguaje(){			

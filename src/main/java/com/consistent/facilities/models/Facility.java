@@ -3,8 +3,6 @@ package com.consistent.facilities.models;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashSet;
-import java.util.Iterator;
-
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -20,6 +18,7 @@ import com.liferay.journal.service.JournalArticleResourceLocalServiceUtil;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
@@ -201,17 +200,18 @@ public class Facility extends Portal implements XML, Constants{
 		return articlesRecovery;
 	}
 	
-	private String parseFacility(JournalArticle article) throws DocumentException, XMLStreamException, IOException{
+	private String parseFacility(JournalArticle article) throws DocumentException, XMLStreamException, IOException, PortalException{
 		Facility facility = new Facility();
 		String locale = com.consistent.facility.constants.Constants.getLanguaje();
 		facility.guid = article.getArticleId();
-		facility.name = article.getTitle();
+		facility.title = article.getTitle(locale);
 		Document document = null;
 		document = SAXReaderUtil.read(article.getContentByLocale(locale));
 		facility.name = document.valueOf("//dynamic-element[@name='nameFacility']/dynamic-content/text()");
 		facility.keyword = document.valueOf("//dynamic-element[@name='keywordFacility']/dynamic-content/text()");
 		facility.description = document.valueOf("//dynamic-element[@name='descriptionFacility']/dynamic-content/text()");
 		facility.language = com.consistent.facility.constants.Constants.LANGUAGE;
+		facility.type = article.getDDMStructure().getName(locale);
 		return facility.getMapping();
 	}
 
@@ -223,9 +223,8 @@ public class Facility extends Portal implements XML, Constants{
 		XMLStreamWriter xMLStreamWriter = xmlOutputFactory.createXMLStreamWriter(stringWriter);
 		xMLStreamWriter.writeStartDocument();
 			xMLStreamWriter.writeStartElement("contents");
-				Iterator<String> articles =	getFacilitiesAll().iterator();
-				while(articles.hasNext()) {
-					xMLStreamWriter.writeCharacters(articles.next());
+				for (String facilities : getFacilitiesAll()) {
+					xMLStreamWriter.writeCharacters(facilities);
 				}
 			xMLStreamWriter.writeEndElement();
 		xMLStreamWriter.writeEndDocument();
