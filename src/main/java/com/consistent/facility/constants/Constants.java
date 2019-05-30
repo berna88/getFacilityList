@@ -13,6 +13,14 @@ public class Constants {
 	public static String HOTEL_CODE = "";
 	public static String KEYWORD = "";
 	
+	// Identificadores de estructuras
+	public static Long RESTAURANTE_ID = null;
+	public static Long FACILITY_ID = null;
+	public static Long MEETING_ROOM_ID = null;
+	public static Long FIESTA_KIDS_CLUB_ID = null;
+	public static Long SPA_ID = null;
+	public static Long GYM_ID = null;
+	public static Long BAR_ID = null;
 	//Metodo para obtener el locate
 	public static String getLanguaje(){			
 		if(LANGUAGE.equalsIgnoreCase("spanish")){

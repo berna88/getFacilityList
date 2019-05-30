@@ -2,7 +2,9 @@ package com.consistent.facilities.models;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -19,11 +21,16 @@ import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.json.JSONArray;
+import com.liferay.portal.kernel.json.JSONException;
+import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 import com.liferay.portal.kernel.xml.Document;
 import com.liferay.portal.kernel.xml.DocumentException;
+import com.liferay.portal.kernel.xml.Node;
 import com.liferay.portal.kernel.xml.SAXReaderUtil;
 
 public class Facility extends Portal implements XML, Constants{
@@ -37,7 +44,16 @@ public class Facility extends Portal implements XML, Constants{
 	private String keyword;
 	private String description;
 	private String type;
+	private List<String> medialinks;
 	
+	public List<String> getMedialinks() {
+		return medialinks;
+	}
+
+	public void setMedialinks(List<String> medialinks) {
+		this.medialinks = medialinks;
+	}
+
 	public String getGuid() {
 		return guid;
 	}
@@ -161,6 +177,45 @@ public class Facility extends Portal implements XML, Constants{
 					xMLStreamWriter.writeStartElement("type");
 						xMLStreamWriter.writeCharacters(type);
 					xMLStreamWriter.writeEndElement();
+					//mediaLink section
+					/*mediaLink section*/
+			         JSONArray ArrayMediaLinks = JSONFactoryUtil.createJSONArray();
+			         log.info(medialinks.size());
+			         List<String> MeliaLinkList = getMedialinks();
+						for (String mediaLinkItem : MeliaLinkList) {
+							JSONObject myObject;
+							try {
+								
+								myObject = JSONFactoryUtil.createJSONObject(mediaLinkItem);
+								ArrayMediaLinks.put(myObject);
+							} catch (JSONException e) {
+								log.error("Error converter json"+e);
+							}
+							
+						}
+						xMLStreamWriter.writeStartElement("medialinks");		   
+				         xMLStreamWriter.writeStartElement("medialink");
+				         
+						   xMLStreamWriter.writeStartElement("keyword");
+						   xMLStreamWriter.writeEndElement();
+						         for (int i = 0; i < ArrayMediaLinks.length(); i++) {
+										JSONObject jsonobject = ArrayMediaLinks.getJSONObject(i);
+									    String link = jsonobject.getString("link");
+									    String type_image = jsonobject.getString("type_image");
+										xMLStreamWriter.writeStartElement("multimedia");
+							            xMLStreamWriter.writeAttribute("type",type_image);
+								        xMLStreamWriter.writeStartElement("url");
+								        xMLStreamWriter.writeCharacters(link);
+								        xMLStreamWriter.writeEndElement();
+							            xMLStreamWriter.writeEndElement();
+									}
+						         xMLStreamWriter.writeStartElement("thumbnail");
+						         xMLStreamWriter.writeEndElement();
+						         xMLStreamWriter.writeStartElement("type");
+						         xMLStreamWriter.writeEndElement();
+					      xMLStreamWriter.writeEndElement();
+			         xMLStreamWriter.writeEndElement();
+			          //mediaLink section
 			xMLStreamWriter.writeEndElement();
 		
 		xMLStreamWriter.flush();
@@ -212,8 +267,41 @@ public class Facility extends Portal implements XML, Constants{
 		facility.description = document.valueOf("//dynamic-element[@name='descriptionFacility']/dynamic-content/text()");
 		facility.language = com.consistent.facility.constants.Constants.LANGUAGE;
 		facility.type = article.getDDMStructure().getName(locale);
+		//Medialinks
+		List<Node> mediaNodes = document.selectNodes("//dynamic-element[@name='mediaLinksFacility']/dynamic-element");
+		log.info("Medianodes: "+mediaNodes.size());
+		int count = 0;
+		List<String> mediaArray = new ArrayList<String>();
+		for (Node mediaNode : mediaNodes) {
+			count++;
+			String pie = mediaNode.valueOf("dynamic-element[@name='footerMediaLinkFacility']/dynamic-content/text()");
+			log.info(pie);
+			String link = mediaNode.valueOf("dynamic-content/text()");
+			log.info(link);
+			String type_image = mediaNode.valueOf("dynamic-element[@name='typeFacility']/dynamic-content/text()");
+			log.info(type_image);
+			if(!link.trim().equals("")){
+				JSONObject object = JSONFactoryUtil.createJSONObject();
+				object.put("link", link);
+				object.put("pie", pie);
+				object.put("type_image", type_image);
+				mediaArray.add(object.toJSONString());
+			}
+		}
+		log.info("conunt: "+ count);
+		facility.medialinks = sanitizeArray(mediaArray);
 		return facility.getMapping();
 	}
+	 private List<String> sanitizeArray(List<String> arraySan){
+	    	if(arraySan.size()>0){
+		    	while(arraySan.size()<1){
+					JSONObject object=JSONFactoryUtil.createJSONObject();
+					arraySan.add(object.toJSONString());				
+				}
+	    	}
+	    	log.info("arraySan"+arraySan);
+	    	return arraySan;    	
+	    }
 
 	@Override
 	public String getContent() throws XMLStreamException, IOException {
