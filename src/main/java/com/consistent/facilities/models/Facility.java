@@ -13,6 +13,8 @@ import javax.xml.stream.XMLStreamWriter;
 import com.consistent.facility.interfaces.Constants;
 import com.consistent.facility.interfaces.XML;
 import com.consistent.facility.portal.Portal;
+import com.liferay.dynamic.data.mapping.model.DDMStructure;
+import com.liferay.dynamic.data.mapping.service.DDMStructureLocalServiceUtil;
 import com.liferay.journal.model.JournalArticle;
 import com.liferay.journal.model.impl.JournalArticleImpl;
 import com.liferay.journal.service.JournalArticleLocalServiceUtil;
@@ -180,7 +182,6 @@ public class Facility extends Portal implements XML, Constants{
 					//mediaLink section
 					/*mediaLink section*/
 			         JSONArray ArrayMediaLinks = JSONFactoryUtil.createJSONArray();
-			         log.info(medialinks.size());
 			         List<String> MeliaLinkList = getMedialinks();
 						for (String mediaLinkItem : MeliaLinkList) {
 							JSONObject myObject;
@@ -228,22 +229,41 @@ public class Facility extends Portal implements XML, Constants{
 	
 	/**
 	 * @author bernardohernandez
-	 * @category Facility
+	 * @category facility
 	 * @return Devuelve la lista de todos los facilities
 	 */
-	
 	private HashSet<String> getFacilitiesAll(){
 		HashSet<String> articlesRecovery = new HashSet<>();
 		int count = 0;
+		
 		try {
+			
 			DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(JournalArticleImpl.class, "JournalArticle",PortalClassLoaderUtil.getClassLoader());
-			dynamicQuery.add(RestrictionsFactoryUtil.eq("folderId", getFolderIdFacility()));
-			HashSet<JournalArticleImpl> articles = new HashSet<>(JournalArticleResourceLocalServiceUtil.dynamicQuery(dynamicQuery));
-			for (JournalArticleImpl journalArticleImpl : articles) {
-				if(!journalArticleImpl.isInTrash()){
-					if(JournalArticleLocalServiceUtil.isLatestVersion(com.consistent.facility.constants.Constants.GROUP_ID, journalArticleImpl.getArticleId(),journalArticleImpl.getVersion())){
-						articlesRecovery.add(parseFacility(journalArticleImpl));
-						count++;
+			if(com.consistent.facility.constants.Constants.KEYWORD==null){
+				dynamicQuery.add(RestrictionsFactoryUtil.eq("folderId", getFolderIdFacility()));
+				dynamicQuery.add(RestrictionsFactoryUtil.eq("groupId", com.consistent.facility.constants.Constants.GROUP_ID));
+				HashSet<JournalArticleImpl> articles = new HashSet<>(JournalArticleResourceLocalServiceUtil.dynamicQuery(dynamicQuery));
+				for (JournalArticleImpl journalArticleImpl : articles) {
+					if(!journalArticleImpl.isInTrash()){
+						if(JournalArticleLocalServiceUtil.isLatestVersion(com.consistent.facility.constants.Constants.GROUP_ID, journalArticleImpl.getArticleId(),journalArticleImpl.getVersion())){
+							articlesRecovery.add(parseFacility(journalArticleImpl));
+							count++;
+						}
+					}
+				}
+				
+			}else{
+				
+				dynamicQuery.add(RestrictionsFactoryUtil.eq("DDMStructureKey", getFacilityIdFilter(com.consistent.facility.constants.Constants.KEYWORD)));
+				dynamicQuery.add(RestrictionsFactoryUtil.eq("folderId", getFolderIdFacility()));
+				dynamicQuery.add(RestrictionsFactoryUtil.eq("groupId", com.consistent.facility.constants.Constants.GROUP_ID));
+				HashSet<JournalArticleImpl> articles = new HashSet<>(JournalArticleResourceLocalServiceUtil.dynamicQuery(dynamicQuery));
+				for (JournalArticleImpl journalArticleImpl : articles) {
+					if(!journalArticleImpl.isInTrash()){
+						if(JournalArticleLocalServiceUtil.isLatestVersion(com.consistent.facility.constants.Constants.GROUP_ID, journalArticleImpl.getArticleId(),journalArticleImpl.getVersion())){
+							articlesRecovery.add(parseFacility(journalArticleImpl));
+							count++;
+						}
 					}
 				}
 			}
@@ -254,7 +274,16 @@ public class Facility extends Portal implements XML, Constants{
 		}
 		return articlesRecovery;
 	}
-	
+	/**
+	 * @author bernardohernandez
+	 * @param article
+	 * @return Devuelve el mapeo del xml en String
+	 * @category facility
+	 * @throws DocumentException
+	 * @throws XMLStreamException
+	 * @throws IOException
+	 * @throws PortalException
+	 */
 	private String parseFacility(JournalArticle article) throws DocumentException, XMLStreamException, IOException, PortalException{
 		Facility facility = new Facility();
 		String locale = com.consistent.facility.constants.Constants.getLanguaje();
@@ -269,17 +298,11 @@ public class Facility extends Portal implements XML, Constants{
 		facility.type = article.getDDMStructure().getName(locale);
 		//Medialinks
 		List<Node> mediaNodes = document.selectNodes("//dynamic-element[@name='mediaLinksFacility']/dynamic-element");
-		log.info("Medianodes: "+mediaNodes.size());
-		int count = 0;
 		List<String> mediaArray = new ArrayList<String>();
 		for (Node mediaNode : mediaNodes) {
-			count++;
 			String pie = mediaNode.valueOf("dynamic-element[@name='footerMediaLinkFacility']/dynamic-content/text()");
-			log.info(pie);
 			String link = mediaNode.valueOf("dynamic-content/text()");
-			log.info(link);
 			String type_image = mediaNode.valueOf("dynamic-element[@name='typeFacility']/dynamic-content/text()");
-			log.info(type_image);
 			if(!link.trim().equals("")){
 				JSONObject object = JSONFactoryUtil.createJSONObject();
 				object.put("link", link);
@@ -288,21 +311,70 @@ public class Facility extends Portal implements XML, Constants{
 				mediaArray.add(object.toJSONString());
 			}
 		}
-		log.info("conunt: "+ count);
+		
 		facility.medialinks = sanitizeArray(mediaArray);
 		return facility.getMapping();
 	}
-	 private List<String> sanitizeArray(List<String> arraySan){
+	
+	private List<String> sanitizeArray(List<String> arraySan){
 	    	if(arraySan.size()>0){
 		    	while(arraySan.size()<1){
 					JSONObject object=JSONFactoryUtil.createJSONObject();
 					arraySan.add(object.toJSONString());				
 				}
 	    	}
-	    	log.info("arraySan"+arraySan);
+	    	
 	    	return arraySan;    	
 	    }
-
+	/**
+	 * @author bernardohernandez
+	 * @param keyword
+	 * @return Devuleve el identificador del keyword en Long
+	 * @throws PortalException 
+	 */
+	private String getFacilityIdFilter(String keyword) throws PortalException{
+		DDMStructure results;
+		switch (keyword) {
+		case RESTAUTANT:
+			log.info(RESTAUTANT);
+			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.RESTAURANTE_ID);
+			return results.getStructureKey();
+		case MEETING_ROOM:
+			log.info(MEETING_ROOM);
+			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.MEETING_ROOM_ID);
+			return results.getStructureKey();
+		case BAR:
+			log.info(BAR);
+			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.BAR_ID);
+			return results.getStructureKey(); 
+		case FIESTA_KIDS:
+			log.info(FIESTA_KIDS);
+			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.FIESTA_KIDS_CLUB_ID);
+			return results.getStructureKey(); 
+		case SPA:
+			log.info(SPA);
+			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.SPA_ID);
+			return results.getStructureKey();
+		case FACILITY:
+			log.info(FACILITY);
+			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.FACILITY_ID);
+			return results.getStructureKey();
+		case GYM:
+			log.info(GYM);
+			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.GYM_ID);
+			return results.getStructureKey();
+		default:
+			log.info("Esta opcion no esta disponible");
+			return new String("0");
+		}
+		
+	}
+	 /**
+	  * @author bernardohernandez
+	  * @return Devuelve el String del contenedor principal en String
+	  * @throws XMLStreamException, IOException
+	  * @category facility
+	  */
 	@Override
 	public String getContent() throws XMLStreamException, IOException {
 		// TODO Auto-generated method stub

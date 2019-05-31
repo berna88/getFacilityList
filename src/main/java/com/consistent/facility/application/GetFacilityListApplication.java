@@ -39,6 +39,7 @@ public class GetFacilityListApplication extends Application{
 	/**
 	 * @author bernardohernandez
 	 * @return Devuelve el XML en tipo String
+	 * @param siteId, hotelcode, language, channel, keyword
 	 * @throws IOException 
 	 * @throws XMLStreamException 
 	 */
@@ -49,33 +50,17 @@ public class GetFacilityListApplication extends Application{
 		@QueryParam("siteId") long siteId,
 		@QueryParam("language") String language,
 		@QueryParam("hotelcode") String hotelcode,
-		@QueryParam("channel") String channel) throws XMLStreamException, IOException {
+		@QueryParam("channel") String channel,
+		@QueryParam("keyword") String keyword) throws XMLStreamException, IOException {
 		log.info("<-- getFacilityList -->");
-		
 		//Asignando Variables
 		Constants.GROUP_ID = siteId;
 		Constants.LANGUAGE = language;
 		Constants.HOTEL_CODE = hotelcode;
-	
+		Constants.KEYWORD = keyword;
+		//Obtiene el metodo que contiene toda la información
 		XML xml = new Facility();
 		return xml.getContent();
-	}
-	
-	@GET
-	@Path("/getFacilityList")
-	@Produces(MediaType.APPLICATION_XML)
-	public String getFacilityListType(
-			@QueryParam("siteId") long siteId,
-			@QueryParam("language") String language,
-			@QueryParam("hotelcode") String hotelcode,
-			@QueryParam("channel") String channel,
-			@QueryParam("keyword") String keyword){
-		//Asignando Variables
-				Constants.GROUP_ID = siteId;
-				Constants.LANGUAGE = language;
-				Constants.HOTEL_CODE = hotelcode;
-		
-		return "";
 	}
 
 }
