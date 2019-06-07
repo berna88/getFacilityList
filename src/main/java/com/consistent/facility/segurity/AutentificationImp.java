@@ -66,7 +66,7 @@ public class AutentificationImp implements Autentification {
 			return validUser;
 		} catch (NoSuchUserException e) {
 			// TODO: handle exception
-			log.error("El usuario no existe");
+			log.error("las credenciales del usuario no son correctas");
 			return false;
 		}
 		
