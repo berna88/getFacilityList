@@ -24,6 +24,7 @@ import com.consistent.facility.constants.Constants;
 import com.consistent.facility.interfaces.Autentification;
 import com.consistent.facility.interfaces.XML;
 import com.consistent.facility.segurity.AutentificationImp;
+
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
