@@ -14,6 +14,7 @@ import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.xml.stream.XMLStreamException;
 
 import org.osgi.service.component.annotations.Component;
@@ -23,7 +24,6 @@ import com.consistent.facility.constants.Constants;
 import com.consistent.facility.interfaces.Autentification;
 import com.consistent.facility.interfaces.XML;
 import com.consistent.facility.segurity.AutentificationImp;
-import com.liferay.portal.kernel.exception.NoSuchUserException;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -45,7 +45,7 @@ public class GetFacilityListApplication extends Application{
 	
 	/**
 	 * @author bernardohernandez
-	 * @return Devuelve el XML en tipo String
+	 * @return Devuelve el XML de facilities
 	 * @param siteId, hotelcode, language, channel, keyword
 	 * @throws IOException 
 	 * @throws XMLStreamException 
@@ -54,7 +54,7 @@ public class GetFacilityListApplication extends Application{
 	@GET
 	@Path("/getFacilityList")
 	@Produces(MediaType.APPLICATION_XML)
-	public String getFacilityList(
+	public Response getFacilityList(
 		@Context HttpServletRequest request, 
 		@Context HttpHeaders headers,
 		@QueryParam("siteId") long siteId,
@@ -69,12 +69,12 @@ public class GetFacilityListApplication extends Application{
 		Constants.HOTEL_CODE = hotelcode;
 		Constants.KEYWORD = keyword;
 		//Obtiene el metodo que contiene toda la información
-		Autentification autentification = new AutentificationImp(request, headers);
+		final Autentification autentification = new AutentificationImp(request, headers);
 		if(autentification.isAutentificationBasic()){
 			final XML xml = new Facility();
-			return xml.getContent();
+			return Response.status(Response.Status.OK).entity(xml.getContent()).build();
 		}else{
-			return "401 Las credenciales del usuario no son correctas";
+			return Response.status(Response.Status.UNAUTHORIZED).entity("La autenticación no es soportada").build();
 		}
 	}
 

@@ -68,6 +68,10 @@ public class AutentificationImp implements Autentification {
 			// TODO: handle exception
 			log.error("las credenciales del usuario no son correctas");
 			return false;
+		}catch (ArrayIndexOutOfBoundsException e) {
+			// TODO: handle exception
+			log.error("Autentificacion no soportada");
+			return false;
 		}
 		
 		
@@ -78,8 +82,10 @@ public class AutentificationImp implements Autentification {
 	 * @return Devuelve un verdadero false si el token viene nulo
 	 */
 	private boolean isValidToken(String token){
+		
 		if(token == null || !token.startsWith("Basic")) {
-			log.error(Response.status(Response.Status.UNAUTHORIZED).entity("La autenticación no es soportada").build());
+			Response.status(Response.Status.UNAUTHORIZED).entity("La autenticación no es soportada").build();
+				//log.error(Response.status(Response.Status.UNAUTHORIZED).entity("La autenticación no es soportada").build());			
 			return false;
 		}
 		return true;
