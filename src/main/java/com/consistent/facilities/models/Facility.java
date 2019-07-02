@@ -46,7 +46,125 @@ public class Facility extends Portal implements XML, Constants{
 	private String keyword;
 	private String description;
 	private String type;
+	private String schedule;
+	private String treatmentsSpa;
+	private String typeFoodRestaurant;
+	private String dresscodeRestaurant;
+	private String capacityRestaurant;
+	private String allInclusiveRestaurant;
+	private String nameFiestaKids;
+	private String capacityBar;
+	private String AllInclusiveBar;
+	private String numberOfRooms;
+	private String occupationMaximaMeetingRoom;
+	private String schedulesGym;
+	
+	
+	
+	public String getNumberOfRooms() {
+		return numberOfRooms;
+	}
+
+	public void setNumberOfRooms(String numberOfRooms) {
+		this.numberOfRooms = numberOfRooms;
+	}
+
+	public String getSchedulesGym() {
+		return schedulesGym;
+	}
+
+	public void setSchedulesGym(String schedulesGym) {
+		this.schedulesGym = schedulesGym;
+	}
+
+	public String getSalaDeReuniones() {
+		return numberOfRooms;
+	}
+
+	public void setSalaDeReuniones(String numberOfRooms) {
+		this.numberOfRooms = numberOfRooms;
+	}
+
+	public String getOccupationMaximaMeetingRoom() {
+		return occupationMaximaMeetingRoom;
+	}
+
+	public void setOccupationMaximaMeetingRoom(String occupationMaximaMeetingRoom) {
+		this.occupationMaximaMeetingRoom = occupationMaximaMeetingRoom;
+	}
+
+	public String getAllInclusiveBar() {
+		return AllInclusiveBar;
+	}
+
+	public void setAllInclusiveBar(String allInclusiveBar) {
+		AllInclusiveBar = allInclusiveBar;
+	}
+
+	public String getCapacityBar() {
+		return capacityBar;
+	}
+
+	public void setCapacityBar(String capacityBar) {
+		this.capacityBar = capacityBar;
+	}
+
+	public String getNameFiestaKids() {
+		return nameFiestaKids;
+	}
+
+	public void setNameFiestaKids(String nameFiestaKids) {
+		this.nameFiestaKids = nameFiestaKids;
+	}
+
+	public String getDresscodeRestaurant() {
+		return dresscodeRestaurant;
+	}
+
+	public void setDresscodeRestaurant(String dresscodeRestaurant) {
+		this.dresscodeRestaurant = dresscodeRestaurant;
+	}
+
+	public String getCapacityRestaurant() {
+		return capacityRestaurant;
+	}
+
+	public void setCapacityRestaurant(String capacityRestaurant) {
+		this.capacityRestaurant = capacityRestaurant;
+	}
+
+	public String getAllInclusiveRestaurant() {
+		return allInclusiveRestaurant;
+	}
+
+	public void setAllInclusiveRestaurant(String allInclusiveRestaurant) {
+		this.allInclusiveRestaurant = allInclusiveRestaurant;
+	}
 	private List<String> medialinks;
+	
+	public String getTypeFoodRestaurant() {
+		return typeFoodRestaurant;
+	}
+	
+	public void setTypeFoodRestaurant(String typeFoodRestaurant) {
+		this.typeFoodRestaurant = typeFoodRestaurant;
+	}
+	
+	public String getTreatmentsSpa(){
+		return treatmentsSpa;
+	}
+	
+	public void setTreatmentsSpa(String treatmentsSpa) {
+		this.treatmentsSpa = treatmentsSpa;
+	}
+	
+	public String getSchedule() {
+		return schedule;
+	}
+	
+	public void setSchedule(String schedule) {
+		this.schedule = schedule;
+	}
 	
 	public List<String> getMedialinks() {
 		return medialinks;
@@ -179,6 +297,69 @@ public class Facility extends Portal implements XML, Constants{
 					xMLStreamWriter.writeStartElement("type");
 						xMLStreamWriter.writeCharacters(type);
 					xMLStreamWriter.writeEndElement();
+					if(schedule != null) {
+						xMLStreamWriter.writeStartElement("schedule");
+							xMLStreamWriter.writeCharacters(schedule);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(treatmentsSpa != null) {
+						xMLStreamWriter.writeStartElement("treatmentsSpa");
+							xMLStreamWriter.writeDTD(treatmentsSpa);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(typeFoodRestaurant != null) {
+						xMLStreamWriter.writeStartElement("typeFoodRestaurant");
+							xMLStreamWriter.writeDTD(typeFoodRestaurant);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(dresscodeRestaurant != null) {
+						xMLStreamWriter.writeStartElement("dresscodeRestaurant");
+							xMLStreamWriter.writeDTD(dresscodeRestaurant);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(capacityRestaurant != null) {
+						xMLStreamWriter.writeStartElement("capacityRestaurant");
+							xMLStreamWriter.writeDTD(capacityRestaurant);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(allInclusiveRestaurant != null) {
+						xMLStreamWriter.writeStartElement("allInclusiveRestaurant");
+							xMLStreamWriter.writeDTD(allInclusiveRestaurant);
+						xMLStreamWriter.writeEndElement();
+					}
+					
+					if(nameFiestaKids != null) {
+						xMLStreamWriter.writeStartElement("nameFiestaKids");
+							xMLStreamWriter.writeDTD(nameFiestaKids);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(capacityBar != null) {
+						xMLStreamWriter.writeStartElement("capacityBar");
+							xMLStreamWriter.writeDTD(capacityBar);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(AllInclusiveBar != null) {
+						xMLStreamWriter.writeStartElement("AllInclusiveBar");
+							xMLStreamWriter.writeDTD(AllInclusiveBar);
+						xMLStreamWriter.writeEndElement();
+					}
+					
+					if(numberOfRooms != null) {
+						xMLStreamWriter.writeStartElement("numberOfRooms");
+							xMLStreamWriter.writeDTD(numberOfRooms);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(occupationMaximaMeetingRoom != null) {
+						xMLStreamWriter.writeStartElement("occupationMaximaMeetingRoom");
+							xMLStreamWriter.writeDTD(occupationMaximaMeetingRoom);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(schedulesGym != null) {
+						xMLStreamWriter.writeStartElement("schedulesGym");
+							xMLStreamWriter.writeDTD(schedulesGym);
+						xMLStreamWriter.writeEndElement();
+					}
+					
 					//mediaLink section
 					/*mediaLink section*/
 			         JSONArray ArrayMediaLinks = JSONFactoryUtil.createJSONArray();
@@ -230,7 +411,7 @@ public class Facility extends Portal implements XML, Constants{
 	/**
 	 * @author bernardohernandez
 	 * @category facility
-	 * @return Devuelve la lista de todos los facilities
+	 * @return Devuelve la lista de todos los facilities y filtrados
 	 */
 	private HashSet<String> getFacilitiesAll(){
 		HashSet<String> articlesRecovery = new HashSet<>();
@@ -294,6 +475,54 @@ public class Facility extends Portal implements XML, Constants{
 		facility.name = document.valueOf("//dynamic-element[@name='nameFacility']/dynamic-content/text()");
 		facility.keyword = document.valueOf("//dynamic-element[@name='keywordFacility']/dynamic-content/text()");
 		facility.description = document.valueOf("//dynamic-element[@name='descriptionFacility']/dynamic-content/text()");
+		
+		//Validando Horarios
+		if(!document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()").isEmpty()) {
+			facility.schedule = document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()");
+		}else if(!document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()").isEmpty()) {
+			facility.schedule = document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()");
+		}else if(!document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()").isEmpty()) {
+			facility.schedule = document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()");
+		}else if(!document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()").isEmpty()) {
+			facility.schedule = document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()");
+		}else if(!document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()").isEmpty()) {
+			facility.schedule = document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()");
+		}
+		//Validando Spa
+		if(!document.valueOf("//dynamic-element[@name='treatmentsSpa']/dynamic-content/text()").isEmpty()) {
+			facility.treatmentsSpa = document.valueOf("//dynamic-element[@name='treatmentsSpa']/dynamic-content/text()");
+		}
+		//Validando Restaurante
+		if(!document.valueOf("//dynamic-element[@name='typeFoodRestaurant']/dynamic-content/text()").isEmpty()) {
+			facility.typeFoodRestaurant = document.valueOf("//dynamic-element[@name='typeFoodRestaurant']/dynamic-content/text()");
+		}
+		if(!document.valueOf("//dynamic-element[@name='dresscodeRestaurant']/dynamic-content/text()").isEmpty()) {
+			facility.dresscodeRestaurant = document.valueOf("//dynamic-element[@name='dresscodeRestaurant']/dynamic-content/text()");
+		}
+		if(!document.valueOf("//dynamic-element[@name='capacityRestaurant']/dynamic-content/text()").isEmpty()) {
+			facility.capacityRestaurant = document.valueOf("//dynamic-element[@name='capacityRestaurant']/dynamic-content/text()");
+		}
+		if(!document.valueOf("//dynamic-element[@name='allInclusiveRestaurant']/dynamic-content/text()").isEmpty()) {
+			facility.allInclusiveRestaurant = document.valueOf("//dynamic-element[@name='allInclusiveRestaurant']/dynamic-content/text()");
+		}
+		// Validando Fiesta kisd
+		if(!document.valueOf("//dynamic-element[@name='nameFiestaKids']/dynamic-content/text()").isEmpty()) {
+			facility.nameFiestaKids = document.valueOf("//dynamic-element[@name='nameFiestaKids']/dynamic-content/text()");
+		}
+		// Validando Bar
+		if(!document.valueOf("//dynamic-element[@name='capacityBar']/dynamic-content/text()").isEmpty()) {
+			facility.capacityBar = document.valueOf("//dynamic-element[@name='capacityBar']/dynamic-content/text()");
+		}
+		if(!document.valueOf("//dynamic-element[@name='AllInclusive']/dynamic-content/text()").isEmpty()) {
+			facility.AllInclusiveBar = document.valueOf("//dynamic-element[@name='AllInclusive']/dynamic-content/text()");
+		}
+		//Validando Sala de reuniones
+		if(!document.valueOf("//dynamic-element[@name='SalaDeReuniones']/dynamic-content/text()").isEmpty()) {
+			facility.numberOfRooms = document.valueOf("//dynamic-element[@name='SalaDeReuniones']/dynamic-content/text()");
+		}
+		if(!document.valueOf("//dynamic-element[@name='occupationMaximaMeetingRoom']/dynamic-content/text()").isEmpty()) {
+			facility.occupationMaximaMeetingRoom = document.valueOf("//dynamic-element[@name='occupationMaximaMeetingRoom']/dynamic-content/text()");
+		}
 		facility.language = com.consistent.facility.constants.Constants.LANGUAGE;
 		facility.type = article.getDDMStructure().getName(locale);
 		//Medialinks
