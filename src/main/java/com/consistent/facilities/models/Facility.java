@@ -460,9 +460,7 @@ public class Facility extends Portal implements XML, Constants{
 		facility.language = com.consistent.facility.constants.Constants.LANGUAGE;
 		
 		facility.type = article.getDDMStructure().getName(locale);
-		log.info(facility.numberOfRooms);
-		log.info(facility.occupationMaximaMeetingRoom);
-		log.info("Tipo de contenido: "+facility.type.equals("Sala de reuniones"));
+
 		if(facility.type.equals("Restaurant")) {
 			facility.description = 
 					facility.description + 
