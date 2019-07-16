@@ -297,7 +297,118 @@ public class Facility extends Portal implements XML, Constants{
 					xMLStreamWriter.writeStartElement("type");
 						xMLStreamWriter.writeCharacters(type);
 					xMLStreamWriter.writeEndElement();
-				
+					
+					if(schedule != null) {
+						xMLStreamWriter.writeStartElement("schedule");
+							xMLStreamWriter.writeCharacters(schedule);
+						xMLStreamWriter.writeEndElement();
+					}
+					if(type.equals("Spa")) {
+						if(treatmentsSpa != null) {
+							xMLStreamWriter.writeStartElement("treatmentsSpa");
+								xMLStreamWriter.writeDTD(treatmentsSpa);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("treatmentsSpa");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+					}
+					
+					
+					if (type.equals("Restaurant")) {
+						
+						if(typeFoodRestaurant != null) {
+							xMLStreamWriter.writeStartElement("typeFoodRestaurant");
+								xMLStreamWriter.writeDTD(typeFoodRestaurant);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("typeFoodRestaurant");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+						if(dresscodeRestaurant != null) {
+							xMLStreamWriter.writeStartElement("dresscodeRestaurant");
+								xMLStreamWriter.writeDTD(dresscodeRestaurant);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("dresscodeRestaurant");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+						if(capacityRestaurant != null) {
+							xMLStreamWriter.writeStartElement("capacityRestaurant");
+								xMLStreamWriter.writeDTD(capacityRestaurant);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("capacityRestaurant");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+						if(allInclusiveRestaurant != null) {
+							xMLStreamWriter.writeStartElement("allInclusiveRestaurant");
+								xMLStreamWriter.writeDTD(allInclusiveRestaurant);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("allInclusiveRestaurant");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+						
+					}
+					if(type.equals("Fiesta Kids Club")) {
+						if(nameFiestaKids != null) {
+							xMLStreamWriter.writeStartElement("nameFiestaKids");
+								xMLStreamWriter.writeDTD(nameFiestaKids);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("nameFiestaKids");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+					}
+					if(type.equals("Bar")) {
+						if(capacityBar != null) {
+							xMLStreamWriter.writeStartElement("capacityBar");
+								xMLStreamWriter.writeDTD(capacityBar);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("capacityBar");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+						if(AllInclusiveBar != null) {
+							xMLStreamWriter.writeStartElement("AllInclusiveBar");
+								xMLStreamWriter.writeDTD(AllInclusiveBar);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("AllInclusiveBar");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+					}
+					if(type.equals("Meeting room") || type.equals("Sala de reuniones")) {
+						if(numberOfRooms != null) {
+							xMLStreamWriter.writeStartElement("numberOfRooms");
+								xMLStreamWriter.writeDTD(numberOfRooms);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("numberOfRooms");
+								xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+						if(occupationMaximaMeetingRoom != null) {
+							xMLStreamWriter.writeStartElement("occupationMaximaMeetingRoom");
+								xMLStreamWriter.writeDTD(occupationMaximaMeetingRoom);
+							xMLStreamWriter.writeEndElement();
+						}else {
+							xMLStreamWriter.writeStartElement("occupationMaximaMeetingRoom");
+							 	xMLStreamWriter.writeDTD("");
+							xMLStreamWriter.writeEndElement();
+						}
+					}
+					
+					
 					
 					//mediaLink section
 					/*mediaLink section*/
