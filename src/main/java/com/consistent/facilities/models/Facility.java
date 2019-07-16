@@ -298,115 +298,151 @@ public class Facility extends Portal implements XML, Constants{
 						xMLStreamWriter.writeCharacters(type);
 					xMLStreamWriter.writeEndElement();
 					
-					if(schedule != null) {
-						xMLStreamWriter.writeStartElement("schedule");
-							xMLStreamWriter.writeCharacters(schedule);
-						xMLStreamWriter.writeEndElement();
-					}
-					if(type.equals("Spa")) {
-						if(treatmentsSpa != null) {
-							xMLStreamWriter.writeStartElement("treatmentsSpa");
-								xMLStreamWriter.writeDTD(treatmentsSpa);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("treatmentsSpa");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-					}
-					
-					
-					if (type.equals("Restaurant")) {
-						
-						if(typeFoodRestaurant != null) {
-							xMLStreamWriter.writeStartElement("typeFoodRestaurant");
-								xMLStreamWriter.writeDTD(typeFoodRestaurant);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("typeFoodRestaurant");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-						if(dresscodeRestaurant != null) {
-							xMLStreamWriter.writeStartElement("dresscodeRestaurant");
-								xMLStreamWriter.writeDTD(dresscodeRestaurant);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("dresscodeRestaurant");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-						if(capacityRestaurant != null) {
-							xMLStreamWriter.writeStartElement("capacityRestaurant");
-								xMLStreamWriter.writeDTD(capacityRestaurant);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("capacityRestaurant");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-						if(allInclusiveRestaurant != null) {
-							xMLStreamWriter.writeStartElement("allInclusiveRestaurant");
-								xMLStreamWriter.writeDTD(allInclusiveRestaurant);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("allInclusiveRestaurant");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-						
-					}
-					if(type.equals("Fiesta Kids Club")) {
-						if(nameFiestaKids != null) {
-							xMLStreamWriter.writeStartElement("nameFiestaKids");
-								xMLStreamWriter.writeDTD(nameFiestaKids);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("nameFiestaKids");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-					}
-					if(type.equals("Bar")) {
-						if(capacityBar != null) {
-							xMLStreamWriter.writeStartElement("capacityBar");
-								xMLStreamWriter.writeDTD(capacityBar);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("capacityBar");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-						if(AllInclusiveBar != null) {
-							xMLStreamWriter.writeStartElement("AllInclusiveBar");
-								xMLStreamWriter.writeDTD(AllInclusiveBar);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("AllInclusiveBar");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-					}
-					if(type.equals("Meeting room") || type.equals("Sala de reuniones")) {
-						if(numberOfRooms != null) {
-							xMLStreamWriter.writeStartElement("numberOfRooms");
-								xMLStreamWriter.writeDTD(numberOfRooms);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("numberOfRooms");
-								xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-						if(occupationMaximaMeetingRoom != null) {
-							xMLStreamWriter.writeStartElement("occupationMaximaMeetingRoom");
-								xMLStreamWriter.writeDTD(occupationMaximaMeetingRoom);
-							xMLStreamWriter.writeEndElement();
-						}else {
-							xMLStreamWriter.writeStartElement("occupationMaximaMeetingRoom");
-							 	xMLStreamWriter.writeDTD("");
-							xMLStreamWriter.writeEndElement();
-						}
-					}
+		
+		
+		if (type.equals("Spa")) {
+			if (treatmentsSpa != null) {
+				xMLStreamWriter.writeStartElement("treatmentsSpa");
+				xMLStreamWriter.writeDTD(treatmentsSpa);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("treatmentsSpa");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+		}
+
+		if (type.equals("Restaurant")) {
+			
+			if (schedule != null) {
+				xMLStreamWriter.writeStartElement("schedule");
+				xMLStreamWriter.writeCharacters(schedule);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("schedule");
+				xMLStreamWriter.writeCharacters("");
+				xMLStreamWriter.writeEndElement();
+			}
+
+			if (typeFoodRestaurant != null) {
+				xMLStreamWriter.writeStartElement("typeFoodRestaurant");
+				xMLStreamWriter.writeDTD(typeFoodRestaurant);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("typeFoodRestaurant");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (dresscodeRestaurant != null) {
+				xMLStreamWriter.writeStartElement("dresscodeRestaurant");
+				xMLStreamWriter.writeDTD(dresscodeRestaurant);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("dresscodeRestaurant");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (capacityRestaurant != null) {
+				xMLStreamWriter.writeStartElement("capacityRestaurant");
+				xMLStreamWriter.writeDTD(capacityRestaurant);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("capacityRestaurant");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (allInclusiveRestaurant != null) {
+				xMLStreamWriter.writeStartElement("allInclusiveRestaurant");
+				xMLStreamWriter.writeDTD(allInclusiveRestaurant);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("allInclusiveRestaurant");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+
+		}
+		if (type.equals("Fiesta Kids Club")) {
+			if (schedule != null) {
+				xMLStreamWriter.writeStartElement("schedule");
+				xMLStreamWriter.writeCharacters(schedule);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("schedule");
+				xMLStreamWriter.writeCharacters("");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (nameFiestaKids != null) {
+				xMLStreamWriter.writeStartElement("nameFiestaKids");
+				xMLStreamWriter.writeDTD(nameFiestaKids);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("nameFiestaKids");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+		}
+		if (type.equals("Bar")) {
+			if (schedule != null) {
+				xMLStreamWriter.writeStartElement("schedule");
+				xMLStreamWriter.writeCharacters(schedule);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("schedule");
+				xMLStreamWriter.writeCharacters("");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (capacityBar != null) {
+				xMLStreamWriter.writeStartElement("capacityBar");
+				xMLStreamWriter.writeDTD(capacityBar);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("capacityBar");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (AllInclusiveBar != null) {
+				xMLStreamWriter.writeStartElement("AllInclusiveBar");
+				xMLStreamWriter.writeDTD(AllInclusiveBar);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("AllInclusiveBar");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+		}
+		if (type.equals("Meeting room") || type.equals("Sala de reuniones")) {
+			if (numberOfRooms != null) {
+				xMLStreamWriter.writeStartElement("numberOfRooms");
+				xMLStreamWriter.writeDTD(numberOfRooms);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("numberOfRooms");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (occupationMaximaMeetingRoom != null) {
+				xMLStreamWriter.writeStartElement("occupationMaximaMeetingRoom");
+				xMLStreamWriter.writeDTD(occupationMaximaMeetingRoom);
+				xMLStreamWriter.writeEndElement();
+			} else {
+				xMLStreamWriter.writeStartElement("occupationMaximaMeetingRoom");
+				xMLStreamWriter.writeDTD("");
+				xMLStreamWriter.writeEndElement();
+			}
+		}
+		if(type.equals("Gimnasio") || type.equals("Gym")) {
+			if (schedule != null) {
+				xMLStreamWriter.writeStartElement("schedule");
+				xMLStreamWriter.writeCharacters(schedule);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("schedule");
+				xMLStreamWriter.writeCharacters("");
+				xMLStreamWriter.writeEndElement();
+			}
+		}
+		 
 					
 					
 					
@@ -502,6 +538,7 @@ public class Facility extends Portal implements XML, Constants{
 		} catch (Exception e) {
 			// TODO: handle exception
 			log.error("getFacilities: "+e);
+			e.printStackTrace();
 		}
 		return articlesRecovery;
 	}
@@ -526,52 +563,13 @@ public class Facility extends Portal implements XML, Constants{
 		facility.keyword = document.valueOf("//dynamic-element[@name='keywordFacility']/dynamic-content/text()");
 		facility.description = document.valueOf("//dynamic-element[@name='descriptionFacility']/dynamic-content/text()");
 		
-		//Validando Horarios
-		if(!document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()").isEmpty()) {
-			facility.schedule = "<br>"+ document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()") + "</br>";
-		}else if(!document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()").isEmpty()) {
-			facility.schedule = "<br>"+ document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()") + "</br>";
-		}else if(!document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()").isEmpty()) {
-			facility.schedule = "<br>"+ document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()") + "</br>";
-		}else if(!document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()").isEmpty()) {
-			facility.schedule = "<br>"+ document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()") + "</br>";
-		}else if(!document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()").isEmpty()) {
-			facility.schedule = "<br>"+ document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()") + "</br>";
-		}
-		//Validando Spa
-		
-		facility.treatmentsSpa = validEmpty(document.valueOf("//dynamic-element[@name='treatmentsSpa']/dynamic-content/text()"));
-		
-		//Validando Restaurante
-		
-		facility.typeFoodRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='typeFoodRestaurant']/dynamic-content/text()"));
-		
-		facility.dresscodeRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='dresscodeRestaurant']/dynamic-content/text()"));
-		
-		facility.capacityRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='capacityRestaurant']/dynamic-content/text()"));
-		
-		facility.allInclusiveRestaurant = validAllInclusive(document.valueOf("//dynamic-element[@name='allInclusiveRestaurant']/dynamic-content/text()"));
-		
-		// Validando Fiesta kids
-		
-		facility.nameFiestaKids = validEmpty(document.valueOf("//dynamic-element[@name='nameFiestaKids']/dynamic-content/text()"));
-		
-		// Validando Bar
-		
-		facility.capacityBar = validEmpty(document.valueOf("//dynamic-element[@name='capacityBar']/dynamic-content/text()")); 
-		
-		facility.AllInclusiveBar = validAllInclusive(document.valueOf("//dynamic-element[@name='AllInclusive']/dynamic-content/text()"));
-		
-		//Validando Sala de reuniones
-		
-		facility.numberOfRooms = validEmpty(document.valueOf("//dynamic-element[@name='SalaDeReuniones']/dynamic-content/text()"));
-		
-		facility.occupationMaximaMeetingRoom = validEmpty(document.valueOf("//dynamic-element[@name='occupationMaximaMeetingRoom']/dynamic-content/text()"));
 		
 		facility.language = com.consistent.facility.constants.Constants.LANGUAGE;
 		
 		facility.type = article.getDDMStructure().getName(locale);
-
+		
+		facility.getValidData(facility, locale, document);
+		
 		if(facility.type.equals("Restaurant")) {
 			facility.description = 
 					facility.description + 
@@ -606,6 +604,24 @@ public class Facility extends Portal implements XML, Constants{
 					facility.description + 
 					facility.schedule;
 		}
+		
+		  // Restaurante
+		  facility.schedule = cleanBr(facility.schedule); 
+		  facility.typeFoodRestaurant = cleanBr(facility.typeFoodRestaurant); 
+		  facility.dresscodeRestaurant = cleanBr(facility.dresscodeRestaurant); 
+		  facility.capacityRestaurant = cleanBr(facility.capacityRestaurant); 
+		  facility.allInclusiveRestaurant = cleanBr(facility.allInclusiveRestaurant);
+		  // Bar
+		  facility.capacityBar = cleanBr(facility.capacityBar);
+		  facility.AllInclusiveBar = cleanBr(facility.AllInclusiveBar);
+		  // Spa
+		  facility.treatmentsSpa = cleanBr(facility.treatmentsSpa);
+		  // Sala de juntas 
+		  facility.numberOfRooms = cleanBr(facility.numberOfRooms);
+		  facility.occupationMaximaMeetingRoom = cleanBr(facility.occupationMaximaMeetingRoom);
+		  // Fiesta kids
+		  facility.nameFiestaKids = cleanBr(facility.nameFiestaKids);
+		  
 		//Medialinks
 		List<Node> mediaNodes = document.selectNodes("//dynamic-element[@name='mediaLinksFacility']/dynamic-element");
 		List<String> mediaArray = new ArrayList<String>();
@@ -637,19 +653,137 @@ public class Facility extends Portal implements XML, Constants{
 	    	return arraySan;    	
 	    }
 	
-	private String validEmpty(String tagkey) {
+	private String validEmpty(String tagkey, String concat) {
 		if(!tagkey.isEmpty()) {
-			return "<br>"+tagkey+"</br>";
+			return "<br>"+concat+tagkey+"</br>";
 		}
 		return "";
 	}
-	private String validAllInclusive(String tagkey) {
-		if(tagkey.equals("true")) {
-			return "<br>Todo incluido</br>";
+	private String validAllInclusive(String tagkey, String locale) {
+		if(locale.equals("es_ES")) {
+			if(tagkey.equals("true")) {
+				return "<br>Todo incluido</br>";
+			}else {
+				return "";
+			}
+		}else if(locale.equals("en_US")) {
+			if(tagkey.equals("true")) {
+				return "<br>all inclusive</br>";
+			}else {
+				return "";
+			}
 		}else {
 			return "";
 		}
 		
+	}
+	private String cleanBr(String tag) {
+		if(tag != null) {
+			tag = tag.replace("<br>", "");
+			tag = tag.replace("</br>", "");
+		}
+		return tag;
+	}
+	
+	private Facility getValidData(Facility facility, String locale, Document document) {
+		if(locale.equals("es_ES")) {
+			//Validando Horarios
+			if(!document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()").isEmpty()) {
+				facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()") + "</br>";
+			}
+			if(!document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()").isEmpty()) {
+				facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()") + "</br>";
+			}
+			if(!document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()").isEmpty()) {
+				facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()") + "</br>";
+			}else {
+				facility.schedule = "";
+			}
+			if(!document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()").isEmpty()) {
+				facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()") + "</br>";
+			}
+			if(!document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()").isEmpty()) {
+				
+				facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()") + "</br>";
+			}
+			//Validando Spa
+			
+			facility.treatmentsSpa = validEmpty(document.valueOf("//dynamic-element[@name='treatmentsSpa']/dynamic-content/text()"),"Tratamientos: ");
+			
+			//Validando Restaurante
+			
+			facility.typeFoodRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='typeFoodRestaurant']/dynamic-content/text()"), "Comida");
+			
+			facility.dresscodeRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='dresscodeRestaurant']/dynamic-content/text()"), "Tipo de vestimenta:");
+			
+			facility.capacityRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='capacityRestaurant']/dynamic-content/text()"), "Capacidad:");
+					
+			facility.allInclusiveRestaurant = validAllInclusive(document.valueOf("//dynamic-element[@name='allInclusiveRestaurant']/dynamic-content/text()"), locale);
+			// Validando Fiesta kids
+			
+			facility.nameFiestaKids = validEmpty(document.valueOf("//dynamic-element[@name='nameFiestaKids']/dynamic-content/text()"), "Nombre de fiesta kids");
+			
+			// Validando Bar
+			
+			facility.capacityBar = validEmpty(document.valueOf("//dynamic-element[@name='capacityBar']/dynamic-content/text()"), "Capacidad:"); 
+			
+			facility.AllInclusiveBar = validAllInclusive(document.valueOf("//dynamic-element[@name='AllInclusive']/dynamic-content/text()"),locale);
+			
+			//Validando Sala de reuniones
+			
+			facility.numberOfRooms = validEmpty(document.valueOf("//dynamic-element[@name='SalaDeReuniones']/dynamic-content/text()"), "Numero de Habitaciones:");
+			
+			facility.occupationMaximaMeetingRoom = validEmpty(document.valueOf("//dynamic-element[@name='occupationMaximaMeetingRoom']/dynamic-content/text()"),"Ocupacion macima de habitaciones");
+			
+		}else if(locale.equals("en_US")) {
+			//Validando Horarios
+			if(!document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()").isEmpty()) {
+				facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()") + "</br>";
+			}
+			if(!document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()").isEmpty()) {
+				facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()") + "</br>";
+			}
+			if(!document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()").isEmpty()) {
+				facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()") + "</br>";
+			}
+			if(!document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()").isEmpty()) {
+				facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()") + "</br>";
+			}
+			if(!document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()").isEmpty()) {
+				
+				facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()") + "</br>";
+			}
+			//Validando Spa
+			
+			facility.treatmentsSpa = validEmpty(document.valueOf("//dynamic-element[@name='treatmentsSpa']/dynamic-content/text()"), "Treatments Spa:");
+			
+			//Validando Restaurante
+			
+			facility.typeFoodRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='typeFoodRestaurant']/dynamic-content/text()"), "Food Type:");
+			
+			facility.dresscodeRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='dresscodeRestaurant']/dynamic-content/text()"), "Dresscode:");
+			
+			facility.capacityRestaurant = validEmpty(document.valueOf("//dynamic-element[@name='capacityRestaurant']/dynamic-content/text()"), "Capacity:");
+					
+			facility.allInclusiveRestaurant = validAllInclusive(document.valueOf("//dynamic-element[@name='allInclusiveRestaurant']/dynamic-content/text()"), locale);
+			// Validando Fiesta kids
+			
+			facility.nameFiestaKids = validEmpty(document.valueOf("//dynamic-element[@name='nameFiestaKids']/dynamic-content/text()"), "Name Fiesta Kids:");
+			
+			// Validando Bar
+			
+			facility.capacityBar = validEmpty(document.valueOf("//dynamic-element[@name='capacityBar']/dynamic-content/text()"),""); 
+			
+			facility.AllInclusiveBar = validAllInclusive(document.valueOf("//dynamic-element[@name='AllInclusive']/dynamic-content/text()"), locale);
+			
+			//Validando Sala de reuniones
+			
+			facility.numberOfRooms = validEmpty(document.valueOf("//dynamic-element[@name='SalaDeReuniones']/dynamic-content/text()"),"Number of Rooms");
+			
+			facility.occupationMaximaMeetingRoom = validEmpty(document.valueOf("//dynamic-element[@name='occupationMaximaMeetingRoom']/dynamic-content/text()"),"Occupation Maxima");
+			
+		}
+		return facility;
 	}
 	
 	/**
