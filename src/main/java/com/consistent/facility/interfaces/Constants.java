@@ -11,4 +11,11 @@ public interface Constants {
 	public final String SPA = "spa";
 	public final String FACILITY = "facility";
 	public final String GYM = "gym";
+	
+	// Validaciones
+	
+	public final String TYPE_SPA = "Spa";
+	public final String TYPE_RESTAURANT = "Restaurant";
+	public final String TYPE_FIESTAKIDSCLUB = "Fiesta Kids Club";
+	public final String TYPE_BAR = "Bar";
 }
