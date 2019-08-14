@@ -47,7 +47,7 @@ public class GetFacilityListApplication extends Application{
 	@Path("/getFacilityList")
 	@Produces(MediaType.APPLICATION_XML)
 	public String getFacilityList(
-		@QueryParam("siteId") long siteId,
+		@QueryParam("siteID") long siteId,
 		@QueryParam("language") String language,
 		@QueryParam("hotelcode") String hotelcode,
 		@QueryParam("channel") String channel,
