@@ -580,6 +580,13 @@ public class Facility extends Portal implements XML, Constants{
 		facility.name = document.valueOf("//dynamic-element[@name='nameFacility']/dynamic-content/text()");
 		facility.keyword = document.valueOf("//dynamic-element[@name='keywordFacility']/dynamic-content/text()");
 		facility.description = document.valueOf("//dynamic-element[@name='descriptionFacility']/dynamic-content/text()");
+		facility.description = facility.description.replaceAll("<div>", "");
+		facility.description = facility.description.replaceAll("</div>", "");
+		facility.description = facility.description.replaceAll("<p>", "");
+		facility.description = facility.description.replaceAll("<p", "");
+		facility.description = facility.description.replaceAll("</p>", "");
+		facility.description = facility.description.replaceAll("<br />", "");
+		facility.description = "<p>".concat(facility.description).concat("</p>");
 		facility.descriptionComplete = facility.description;
 		
 		facility.language = com.consistent.facility.constants.Constants.LANGUAGE;
@@ -673,20 +680,20 @@ public class Facility extends Portal implements XML, Constants{
 	
 	private String validEmpty(String tagkey, String concat) {
 		if(!tagkey.isEmpty()) {
-			return "<br>"+concat+tagkey+"</br>";
+			return "<p>"+concat+tagkey+"</p>";
 		}
 		return "";
 	}
 	private String validAllInclusive(String tagkey, String locale) {
 		if(locale.equals("es_ES")) {
 			if(tagkey.equals("true")) {
-				return "<br>Todo incluido</br>";
+				return "<p>Todo incluido</p>";
 			}else {
 				return "";
 			}
 		}else if(locale.equals("en_US")) {
 			if(tagkey.equals("true")) {
-				return "<br>All inclusive</br>";
+				return "<p>All inclusive</p>";
 			}else {
 				return "";
 			}
@@ -697,8 +704,8 @@ public class Facility extends Portal implements XML, Constants{
 	}
 	private String cleanBr(String tag) {
 		if(tag != null) {
-			tag = tag.replace("<br>", "");
-			tag = tag.replace("</br>", "");
+			tag = tag.replace("<p>", "");
+			tag = tag.replace("</p>", "");
 		}
 		return tag;
 	}
@@ -708,7 +715,7 @@ public class Facility extends Portal implements XML, Constants{
 			//Validando Horarios
 			if(facility.type.equals("Fiesta Kids Club")) {
 				if(!document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()") + "</p>";
 				}else {
 					facility.schedule = "";
 				}
@@ -718,7 +725,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			if(facility.type.equals("Restaurant")) {
 				if (!document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()")+ "</br>";
+					facility.schedule = "<p>Horario: "+ document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()")+ "</p>";
 				} else {
 					facility.schedule = "";
 				}
@@ -735,7 +742,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			if(facility.type.equals("Bar")) {
 				if (!document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()") + "</p>";
 				}else {
 					facility.schedule = "";
 				}
@@ -752,7 +759,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			if(facility.type.equals("Spa")) {
 				if (!document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Horario: "+document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Horario: "+document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()") + "</p>";
 				}
 				//Validando Spa
 				facility.treatmentsSpa = validEmpty(document.valueOf("//dynamic-element[@name='treatmentsSpa']/dynamic-content/text()"),"Tratamientos: ");
@@ -760,7 +767,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			if(facility.type.equals("Gimnasio") || facility.type.equals("Gym")) {
 				if (!document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Horario: "+ document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()") + "</p>";
 				}
 			}
 			
@@ -769,7 +776,7 @@ public class Facility extends Portal implements XML, Constants{
 			if(facility.type.equals("Fiesta Kids Club")) {
 				//Validando Horarios
 				if(!document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content/text()") + "</p>";
 				}else {
 					facility.schedule = "";
 				}
@@ -779,7 +786,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			if(facility.type.equals("Restaurant")) {
 				if(!document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Schedule: "+ document.valueOf("//dynamic-element[@name='scheduleRestaurant']/dynamic-content/text()") + "</p>";
 				}else {
 					facility.schedule = "";
 				}
@@ -794,7 +801,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			if(facility.type.equals("Bar")) {
 				if(!document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesBar']/dynamic-content/text()") + "</p>";
 				}else {
 					facility.schedule = "";
 				}
@@ -811,7 +818,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			if(facility.type.equals("Spa")) {
 				if(!document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()").isEmpty()) {
-					facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Schedule: "+ document.valueOf("//dynamic-element[@name='scheduleSpa']/dynamic-content/text()") + "</p>";
 				}else {
 					facility.schedule = "";
 				}
@@ -823,7 +830,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			if(facility.type.equals("Gimnasio") || facility.type.equals("Gym")) {
 				if(!document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()").isEmpty()) {		
-					facility.schedule = "<br>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()") + "</br>";
+					facility.schedule = "<p>Schedule: "+ document.valueOf("//dynamic-element[@name='schedulesGym']/dynamic-content/text()") + "</p>";
 				}else {
 					facility.schedule = "";
 				}
