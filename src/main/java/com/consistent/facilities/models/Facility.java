@@ -525,6 +525,7 @@ public class Facility extends Portal implements XML, Constants{
 			
 			DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(JournalArticleImpl.class, "JournalArticle",PortalClassLoaderUtil.getClassLoader());
 			if(com.consistent.facility.constants.Constants.KEYWORD==null){
+				log.info("Sin filtro");
 				dynamicQuery.add(RestrictionsFactoryUtil.eq("folderId", getFolderIdFacility()));
 				dynamicQuery.add(RestrictionsFactoryUtil.eq("groupId", com.consistent.facility.constants.Constants.GROUP_ID));
 				HashSet<JournalArticleImpl> articles = new HashSet<>(JournalArticleResourceLocalServiceUtil.dynamicQuery(dynamicQuery));
@@ -538,7 +539,7 @@ public class Facility extends Portal implements XML, Constants{
 				}
 				
 			}else{
-				
+				log.info("Con filtro");
 				dynamicQuery.add(RestrictionsFactoryUtil.eq("DDMStructureKey", getFacilityIdFilter(com.consistent.facility.constants.Constants.KEYWORD)));
 				dynamicQuery.add(RestrictionsFactoryUtil.eq("folderId", getFolderIdFacility()));
 				dynamicQuery.add(RestrictionsFactoryUtil.eq("groupId", com.consistent.facility.constants.Constants.GROUP_ID));
