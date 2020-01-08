@@ -36,7 +36,18 @@ public abstract class Portal implements Constants{
 			dynamicQuery.add(RestrictionsFactoryUtil.eq("name", hotelCode));
 			dynamicQuery.add(RestrictionsFactoryUtil.eq("groupId", new Long(com.consistent.facility.constants.Constants.GROUP_ID)));
 			List<JournalFolderImpl> list = JournalArticleResourceLocalServiceUtil.dynamicQuery(dynamicQuery);
-			folderId = list.get(0).getFolderId();
+			if(list.size() > 1) {
+				log.info("Lista con mas elementos");
+				for (JournalFolderImpl journalFolderImpl : list) {
+					if(journalFolderImpl.getTreePath().split("/").length >= 5)
+						folderId = journalFolderImpl.getFolderId();
+					
+				}
+			}else {
+				log.info("Lista con un solo elemento");
+				folderId = list.get(0).getFolderId();
+			}
+			
 			
 		} catch (IndexOutOfBoundsException e) {
 			// TODO: handle exception
