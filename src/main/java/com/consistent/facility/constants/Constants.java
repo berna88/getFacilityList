@@ -21,6 +21,7 @@ public class Constants {
 	public static Long SPA_ID = null;
 	public static Long GYM_ID = null;
 	public static Long BAR_ID = null;
+	public static Long ACTIVITIES_ID = null;
 	//Metodo para obtener el locate
 	public static String getLanguaje(){			
 		if(LANGUAGE.equalsIgnoreCase("spanish")){

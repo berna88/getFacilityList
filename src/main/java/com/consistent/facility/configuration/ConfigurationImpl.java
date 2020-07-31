@@ -82,6 +82,13 @@ public class ConfigurationImpl {
 				}else{
 					log.info("Configuration Bar_Id is null "+Constants.BAR_ID);
 				}
+				//Activities
+				if(configuration.getActivitiesId()!=0){ 
+					Constants.ACTIVITIES_ID = configuration.getActivitiesId();
+					log.info("Configuration Activities_Id "+Constants.ACTIVITIES_ID);
+				}else{
+					log.info("Configuration Activities_Id is null "+Constants.ACTIVITIES_ID);
+				}
 				 
 			}else{
 				log.info("The sample DXP REST config object is not yet initialized");

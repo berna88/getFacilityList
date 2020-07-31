@@ -27,4 +27,7 @@ public interface Configuration {
 	
 	@Meta.AD(required = false,description = "Get Struture Bar id", deflt="0")
     public Long getBarId();
+	
+	@Meta.AD(required = false,description = "Get Struture Activities id", deflt="0")
+    public Long getActivitiesId();
 }

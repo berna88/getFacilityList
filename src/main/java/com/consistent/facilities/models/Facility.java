@@ -878,6 +878,10 @@ public class Facility extends Portal implements XML, Constants{
 			log.info(GYM);
 			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.GYM_ID);
 			return results.getStructureKey();
+		case ACTIVITIES:
+			log.info(ACTIVITIES);
+			results = DDMStructureLocalServiceUtil.getStructure(com.consistent.facility.constants.Constants.ACTIVITIES_ID);
+			return results.getStructureKey();
 		default:
 			log.info("Esta opcion no esta disponible");
 			return new String("0");

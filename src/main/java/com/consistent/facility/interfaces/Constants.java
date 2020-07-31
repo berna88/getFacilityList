@@ -11,6 +11,7 @@ public interface Constants {
 	public final String SPA = "spa";
 	public final String FACILITY = "facility";
 	public final String GYM = "gym";
+	public final String ACTIVITIES = "activities";
 	
 	// Validaciones
 	
