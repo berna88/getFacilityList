@@ -59,6 +59,210 @@ public class Facility extends Portal implements XML, Constants{
 	private String numberOfRooms;
 	private String occupationMaximaMeetingRoom;
 	private String schedulesGym;
+	private String yoga;
+	private String aquaerobics;
+	private String zumba;
+	private String caminata;
+	private String pingPong;
+	private String juegosDeDardos;
+	private String mesaDeBillar;
+	private String bingo;
+	private String juegosDeMesa;
+	private String clasesDeCocina;
+	private String clasesDeBaile;
+	private String clubDePlaya;
+	private String juegosDePlaya;
+	private String musicaEnVivo;
+	private String rentaDeBicicletas;
+	private String excursiones;
+	private String tours;
+	private String snorkel;
+	private String kayak;
+	private String buceo;
+	private String catamaranyVelero;
+	private String pesca;
+	private String actividadesMaritimas;
+	private String paddleBoard;
+	private String deportesMotorizados;
+	private String casino;
+	private String paseoACaballo;
+	private String cataDeVinoTequila;
+	private String cursosDeGolf;
+	
+	public String getBingo() {
+		return bingo;
+	}
+	public void setBingo(String bingo) {
+		this.bingo = bingo;
+	}
+	public String getPingPong() {
+		return pingPong;
+	}
+	public void setPingPong(String pingPong) {
+		this.pingPong = pingPong;
+	}
+	public String getJuegosDeDardos() {
+		return juegosDeDardos;
+	}
+	public void setJuegosDeDardos(String juegosDeDardos) {
+		this.juegosDeDardos = juegosDeDardos;
+	}
+	public String getMesaDeBillar() {
+		return mesaDeBillar;
+	}
+	public void setMesaDeBillar(String mesaDeBillar) {
+		this.mesaDeBillar = mesaDeBillar;
+	}
+	public String getJuegosDeMesa() {
+		return juegosDeMesa;
+	}
+	public void setJuegosDeMesa(String juegosDeMesa) {
+		this.juegosDeMesa = juegosDeMesa;
+	}
+	public String getClasesDeCocina() {
+		return clasesDeCocina;
+	}
+	public void setClasesDeCocina(String clasesDeCocina) {
+		this.clasesDeCocina = clasesDeCocina;
+	}
+	public String getClasesDeBaile() {
+		return clasesDeBaile;
+	}
+	public void setClasesDeBaile(String clasesDeBaile) {
+		this.clasesDeBaile = clasesDeBaile;
+	}
+	public String getClubDePlaya() {
+		return clubDePlaya;
+	}
+	public void setClubDePlaya(String clubDePlaya) {
+		this.clubDePlaya = clubDePlaya;
+	}
+	public String getJuegosDePlaya() {
+		return juegosDePlaya;
+	}
+	public void setJuegosDePlaya(String juegosDePlaya) {
+		this.juegosDePlaya = juegosDePlaya;
+	}
+	public String getMusicaEnVivo() {
+		return musicaEnVivo;
+	}
+	public void setMusicaEnVivo(String musicaEnVivo) {
+		this.musicaEnVivo = musicaEnVivo;
+	}
+	public String getRentaDeBicicletas() {
+		return rentaDeBicicletas;
+	}
+	public void setRentaDeBicicletas(String rentaDeBicicletas) {
+		this.rentaDeBicicletas = rentaDeBicicletas;
+	}
+	public String getExcursiones() {
+		return excursiones;
+	}
+	public void setExcursiones(String excursiones) {
+		this.excursiones = excursiones;
+	}
+	public String getTours() {
+		return tours;
+	}
+	public void setTours(String tours) {
+		this.tours = tours;
+	}
+	public String getSnorkel() {
+		return snorkel;
+	}
+	public void setSnorkel(String snorkel) {
+		this.snorkel = snorkel;
+	}
+	public String getKayak() {
+		return kayak;
+	}
+	public void setKayak(String kayak) {
+		this.kayak = kayak;
+	}
+	public String getBuceo() {
+		return buceo;
+	}
+	public void setBuceo(String buceo) {
+		this.buceo = buceo;
+	}
+	public String getCatamaranyVelero() {
+		return catamaranyVelero;
+	}
+	public void setCatamaranyVelero(String catamaranyVelero) {
+		this.catamaranyVelero = catamaranyVelero;
+	}
+	public String getPesca() {
+		return pesca;
+	}
+	public void setPesca(String pesca) {
+		this.pesca = pesca;
+	}
+	public String getActividadesMaritimas() {
+		return actividadesMaritimas;
+	}
+	public void setActividadesMaritimas(String actividadesMaritimas) {
+		this.actividadesMaritimas = actividadesMaritimas;
+	}
+	public String getPaddleBoard() {
+		return paddleBoard;
+	}
+	public void setPaddleBoard(String paddleBoard) {
+		this.paddleBoard = paddleBoard;
+	}
+	public String getDeportesMotorizados() {
+		return deportesMotorizados;
+	}
+	public void setDeportesMotorizados(String deportesMotorizados) {
+		this.deportesMotorizados = deportesMotorizados;
+	}
+	public String getCasino() {
+		return casino;
+	}
+	public void setCasino(String casino) {
+		this.casino = casino;
+	}
+	public String getPaseoACaballo() {
+		return paseoACaballo;
+	}
+	public void setPaseoACaballo(String paseoACaballo) {
+		this.paseoACaballo = paseoACaballo;
+	}
+	public String getCataDeVinoTequila() {
+		return cataDeVinoTequila;
+	}
+	public void setCataDeVinoTequila(String cataDeVinoTequila) {
+		this.cataDeVinoTequila = cataDeVinoTequila;
+	}
+	public String getCursosDeGolf() {
+		return cursosDeGolf;
+	}
+	public void setCursosDeGolf(String cursosDeGolf) {
+		this.cursosDeGolf = cursosDeGolf;
+	}
+	public String getYoga() {
+		return yoga;
+	}
+	public void setYoga(String yoga) {
+		this.yoga = yoga;
+	}
+	public String getAquaerobics() {
+		return aquaerobics;
+	}
+	public void setAquaerobics(String aquaerobics) {
+		this.aquaerobics = aquaerobics;
+	}
+	public String getZumba() {
+		return zumba;
+	}
+	public void setZumba(String zumba) {
+		this.zumba = zumba;
+	}
+	public String getCaminata() {
+		return caminata;
+	}
+	public void setCaminata(String caminata) {
+		this.caminata = caminata;
+	}
 	
 	public String getDescriptionComplete() {
 		return descriptionComplete;
@@ -240,8 +444,19 @@ public class Facility extends Portal implements XML, Constants{
 		return log;
 	}
 
+	
+	
 	public Facility(String guid, String name, String title, String language, String keyword, String description,
-			String order, String channel, String type) {
+			String descriptionComplete, String type, String schedule, String treatmentsSpa, String typeFoodRestaurant,
+			String dresscodeRestaurant, String capacityRestaurant, String allInclusiveRestaurant, String nameFiestaKids,
+			String capacityBar, String allInclusiveBar, String numberOfRooms, String occupationMaximaMeetingRoom,
+			String schedulesGym, String yoga, String aquaerobics, String zumba, String caminata, String pingPong,
+			String juegosDeDardos, String mesaDeBillar, String bingo, String juegosDeMesa, String clasesDeCocina,
+			String clasesDeBaile, String clubDePlaya, String juegosDePlaya, String musicaEnVivo,
+			String rentaDeBicicletas, String excursiones, String tours, String snorkel, String kayak, String buceo,
+			String catamaranyVelero, String pesca, String actividadesMaritimas, String paddleBoard,
+			String deportesMotorizados, String casino, String paseoACaballo, String cataDeVinoTequila,
+			String cursosDeGolf, List<String> medialinks) {
 		super();
 		this.guid = guid;
 		this.name = name;
@@ -249,9 +464,51 @@ public class Facility extends Portal implements XML, Constants{
 		this.language = language;
 		this.keyword = keyword;
 		this.description = description;
+		this.descriptionComplete = descriptionComplete;
 		this.type = type;
+		this.schedule = schedule;
+		this.treatmentsSpa = treatmentsSpa;
+		this.typeFoodRestaurant = typeFoodRestaurant;
+		this.dresscodeRestaurant = dresscodeRestaurant;
+		this.capacityRestaurant = capacityRestaurant;
+		this.allInclusiveRestaurant = allInclusiveRestaurant;
+		this.nameFiestaKids = nameFiestaKids;
+		this.capacityBar = capacityBar;
+		AllInclusiveBar = allInclusiveBar;
+		this.numberOfRooms = numberOfRooms;
+		this.occupationMaximaMeetingRoom = occupationMaximaMeetingRoom;
+		this.schedulesGym = schedulesGym;
+		this.yoga = yoga;
+		this.aquaerobics = aquaerobics;
+		this.zumba = zumba;
+		this.caminata = caminata;
+		this.pingPong = pingPong;
+		this.juegosDeDardos = juegosDeDardos;
+		this.mesaDeBillar = mesaDeBillar;
+		this.bingo = bingo;
+		this.juegosDeMesa = juegosDeMesa;
+		this.clasesDeCocina = clasesDeCocina;
+		this.clasesDeBaile = clasesDeBaile;
+		this.clubDePlaya = clubDePlaya;
+		this.juegosDePlaya = juegosDePlaya;
+		this.musicaEnVivo = musicaEnVivo;
+		this.rentaDeBicicletas = rentaDeBicicletas;
+		this.excursiones = excursiones;
+		this.tours = tours;
+		this.snorkel = snorkel;
+		this.kayak = kayak;
+		this.buceo = buceo;
+		this.catamaranyVelero = catamaranyVelero;
+		this.pesca = pesca;
+		this.actividadesMaritimas = actividadesMaritimas;
+		this.paddleBoard = paddleBoard;
+		this.deportesMotorizados = deportesMotorizados;
+		this.casino = casino;
+		this.paseoACaballo = paseoACaballo;
+		this.cataDeVinoTequila = cataDeVinoTequila;
+		this.cursosDeGolf = cursosDeGolf;
+		this.medialinks = medialinks;
 	}
-	
 	public Facility(){
 		this.guid = "";
 		this.name = "";
@@ -259,7 +516,50 @@ public class Facility extends Portal implements XML, Constants{
 		this.language = "";
 		this.keyword = "";
 		this.description = "";
+		this.descriptionComplete = "";
 		this.type = "";
+		this.schedule = "";
+		this.treatmentsSpa = "";
+		this.typeFoodRestaurant = "";
+		this.dresscodeRestaurant = "";
+		this.capacityRestaurant = "";
+		this.allInclusiveRestaurant = "";
+		this.nameFiestaKids = "";
+		this.capacityBar = "";
+		AllInclusiveBar = "";
+		this.numberOfRooms = "";
+		this.occupationMaximaMeetingRoom = "";
+		this.schedulesGym = "";
+		this.yoga = "";
+		this.aquaerobics = "";
+		this.zumba = "";
+		this.caminata = "";
+		this.pingPong = "";
+		this.juegosDeDardos = "";
+		this.mesaDeBillar = "";
+		this.bingo = "";
+		this.juegosDeMesa = "";
+		this.clasesDeCocina = "";
+		this.clasesDeBaile = "";
+		this.clubDePlaya = "";
+		this.juegosDePlaya = "";
+		this.musicaEnVivo = "";
+		this.rentaDeBicicletas = "";
+		this.excursiones = "";
+		this.tours = "";
+		this.snorkel = "";
+		this.kayak = "";
+		this.buceo = "";
+		this.catamaranyVelero = "";
+		this.pesca = "";
+		this.actividadesMaritimas = "";
+		this.paddleBoard = "";
+		this.deportesMotorizados = "";
+		this.casino = "";
+		this.paseoACaballo = "";
+		this.cataDeVinoTequila = "";
+		this.cursosDeGolf = "";
+		this.medialinks = new ArrayList<String>();
 	}
 	
 	/**
@@ -593,7 +893,7 @@ public class Facility extends Portal implements XML, Constants{
 		facility.language = com.consistent.facility.constants.Constants.LANGUAGE;
 		
 		facility.type = article.getDDMStructure().getName(locale);
-		
+		log.info("Tipo de facility: "+ facility.type);
 		facility.getValidData(facility, locale, document);
 		
 		if(facility.type.equals(TYPE_RESTAURANT)) {
@@ -713,6 +1013,33 @@ public class Facility extends Portal implements XML, Constants{
 	
 	private Facility getValidData(Facility facility, String locale, Document document) {
 		if(locale.equals("es_ES")) {
+			log.info("Antes de activities");
+			//Validando Activities
+			if(facility.type.equalsIgnoreCase(ACTIVITIES)) {
+				facility.yoga = document.valueOf("//dynamic-element[@name='Yoga']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.aquaerobics = document.valueOf("//dynamic-element[@name='Aquaerobics']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.zumba = document.valueOf("//dynamic-element[@name='Caminata']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.caminata = document.valueOf("//dynamic-element[@name='Caminata']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.yoga = document.valueOf("//dynamic-element[@name='Yoga']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.aquaerobics = document.valueOf("//dynamic-element[@name='Aquaerobics']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.zumba = document.valueOf("//dynamic-element[@name='Caminata']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.caminata = document.valueOf("//dynamic-element[@name='Caminata']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.yoga = document.valueOf("//dynamic-element[@name='Yoga']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.aquaerobics = document.valueOf("//dynamic-element[@name='Aquaerobics']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.zumba = document.valueOf("//dynamic-element[@name='Caminata']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.caminata = document.valueOf("//dynamic-element[@name='Caminata']/dynamic-content[@language-id='"+locale+"']/text()");
+				log.info(facility.yoga);
+				log.info(facility.aquaerobics);
+				String contenedor = "";
+				if(facility.yoga.equalsIgnoreCase("true")) {
+					contenedor += "<p> Yoga </p>";
+				}
+				if(facility.aquaerobics.equalsIgnoreCase("true")) {
+					contenedor += "<p> Aquaerobics </p>";
+				}
+				log.info("Activiades del hotel: "+ contenedor);
+			}
+			
 			//Validando Horarios
 			if(facility.type.equals("Fiesta Kids Club")) {
 				if(!document.valueOf("//dynamic-element[@name='schedulesFiestaKids']/dynamic-content[@language-id='"+locale+"']/text()").isEmpty()) {
