@@ -770,14 +770,280 @@ public class Facility extends Portal implements XML, Constants{
 				xMLStreamWriter.writeEndElement();
 			}
 		}
-		if(type.equals(ACTIVITIES)) {
-			if (schedule != null) {
+		
+		if(type.equalsIgnoreCase("Activities")) {
+			if (yoga != null && !yoga.isEmpty()) {
 				xMLStreamWriter.writeStartElement("yoga");
 				xMLStreamWriter.writeCharacters(yoga);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("schedule");
-				xMLStreamWriter.writeCharacters("");
+				xMLStreamWriter.writeStartElement("yoga");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+	
+			if (aquaerobics != null && !aquaerobics.isEmpty()) {
+				xMLStreamWriter.writeStartElement("aquaerobics");
+				xMLStreamWriter.writeCharacters(aquaerobics);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("aquaerobics");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (zumba != null && !zumba.isEmpty()) {
+				xMLStreamWriter.writeStartElement("zumba");
+				xMLStreamWriter.writeCharacters(zumba);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("zumba");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (caminata != null && !caminata.isEmpty()) {
+				xMLStreamWriter.writeStartElement("caminata");
+				xMLStreamWriter.writeCharacters(caminata);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("caminata");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (pingPong != null && !pingPong.isEmpty()) {
+				xMLStreamWriter.writeStartElement("pingpong");
+				xMLStreamWriter.writeCharacters(pingPong);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("pingpong");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+			if (juegosDeDardos != null && !juegosDeDardos.isEmpty()) {
+				xMLStreamWriter.writeStartElement("juegosdedardos");
+				xMLStreamWriter.writeCharacters(juegosDeDardos);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("juegosDeDardos");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+	
+			if (mesaDeBillar != null && !mesaDeBillar.isEmpty()) {
+				xMLStreamWriter.writeStartElement("mesadebillar");
+				xMLStreamWriter.writeCharacters(mesaDeBillar);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("mesadebillar");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (bingo != null && !bingo.isEmpty()) {
+				xMLStreamWriter.writeStartElement("bingo");
+				xMLStreamWriter.writeCharacters(bingo);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("bingo");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (juegosDeMesa != null && !juegosDeMesa.isEmpty()) {
+				xMLStreamWriter.writeStartElement("juegosdemesa");
+				xMLStreamWriter.writeCharacters(juegosDeMesa);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("juegosdemesa");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (clasesDeCocina != null && !clasesDeCocina.isEmpty()) {
+				xMLStreamWriter.writeStartElement("clasesdecocina");
+				xMLStreamWriter.writeCharacters(clasesDeCocina);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("clasesdecocina");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+			if (clasesDeBaile != null && !clasesDeBaile.isEmpty()) {
+				xMLStreamWriter.writeStartElement("clasesdebaile");
+				xMLStreamWriter.writeCharacters(clasesDeBaile);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("clasesdebaile");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (clubDePlaya != null && !clubDePlaya.isEmpty()) {
+				xMLStreamWriter.writeStartElement("clubdeplaya");
+				xMLStreamWriter.writeCharacters(clubDePlaya);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("clubdeplaya");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (juegosDePlaya != null && !juegosDePlaya.isEmpty()) {
+				xMLStreamWriter.writeStartElement("juegosdeplaya");
+				xMLStreamWriter.writeCharacters(juegosDePlaya);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("juegosdeplaya");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+			if (musicaEnVivo != null && !musicaEnVivo.isEmpty()) {
+				xMLStreamWriter.writeStartElement("musicaenvivo");
+				xMLStreamWriter.writeCharacters(musicaEnVivo);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("musicaenvivo");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+			if (rentaDeBicicletas != null && !rentaDeBicicletas.isEmpty()) {
+				xMLStreamWriter.writeStartElement("rentadebicicletas");
+				xMLStreamWriter.writeCharacters(rentaDeBicicletas);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("rentadebicicletas");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (excursiones != null && !excursiones.isEmpty()) {
+				xMLStreamWriter.writeStartElement("excursiones");
+				xMLStreamWriter.writeCharacters(excursiones);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("excursiones");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (tours != null && !tours.isEmpty()) {
+				xMLStreamWriter.writeStartElement("tours");
+				xMLStreamWriter.writeCharacters(tours);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("tours");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+
+			if (snorkel != null && !snorkel.isEmpty()) {
+				xMLStreamWriter.writeStartElement("snorkel");
+				xMLStreamWriter.writeCharacters(snorkel);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("snorkel");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+			if (kayak != null && !kayak.isEmpty()) {
+				xMLStreamWriter.writeStartElement("kayak");
+				xMLStreamWriter.writeCharacters(kayak);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("kayak");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (buceo != null && !buceo.isEmpty()) {
+				xMLStreamWriter.writeStartElement("buceo");
+				xMLStreamWriter.writeCharacters(buceo);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("buceo");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (catamaranyVelero != null && !catamaranyVelero.isEmpty()) {
+				xMLStreamWriter.writeStartElement("catamaranyvelero");
+				xMLStreamWriter.writeCharacters(catamaranyVelero);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("catamaranyvelero");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+			if (pesca != null && !pesca.isEmpty()) {
+				xMLStreamWriter.writeStartElement("pesca");
+				xMLStreamWriter.writeCharacters(pesca);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("pesca");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (actividadesMaritimas != null && !actividadesMaritimas.isEmpty()) {
+				xMLStreamWriter.writeStartElement("actividadesmaritimas");
+				xMLStreamWriter.writeCharacters(actividadesMaritimas);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("actividadesmaritimas");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (paddleBoard != null && !paddleBoard.isEmpty()) {
+				xMLStreamWriter.writeStartElement("paddleboard");
+				xMLStreamWriter.writeCharacters(paddleBoard);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("paddleboard");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+
+			if (deportesMotorizados != null && !deportesMotorizados.isEmpty()) {
+				xMLStreamWriter.writeStartElement("deportesmotorizados");
+				xMLStreamWriter.writeCharacters(deportesMotorizados);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("deportesmotorizados");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			
+			if (casino != null && !casino.isEmpty()) {
+				xMLStreamWriter.writeStartElement("casino");
+				xMLStreamWriter.writeCharacters(casino);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("casino");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (paseoACaballo != null && !paseoACaballo.isEmpty()) {
+				xMLStreamWriter.writeStartElement("paseoacaballo");
+				xMLStreamWriter.writeCharacters(paseoACaballo);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("paseoacaballo");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (cataDeVinoTequila != null && !cataDeVinoTequila.isEmpty()) {
+				xMLStreamWriter.writeStartElement("catadevinotequila");
+				xMLStreamWriter.writeCharacters(cataDeVinoTequila);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("catamaranyvelero");
+				xMLStreamWriter.writeCharacters("false");
+				xMLStreamWriter.writeEndElement();
+			}
+			if (cursosDeGolf != null && !cursosDeGolf.isEmpty()) {
+				xMLStreamWriter.writeStartElement("cursosdegolf");
+				xMLStreamWriter.writeCharacters(cursosDeGolf);
+				xMLStreamWriter.writeEndElement();
+			}else {
+				xMLStreamWriter.writeStartElement("cursosdegolf");
+				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 		}
@@ -914,7 +1180,7 @@ public class Facility extends Portal implements XML, Constants{
 		facility.language = com.consistent.facility.constants.Constants.LANGUAGE;
 		
 		facility.type = article.getDDMStructure().getName(locale);
-		log.info("Tipo de facility: "+ facility.type);
+		
 		facility.getValidData(facility, locale, document);
 		
 		if(facility.type.equals(TYPE_RESTAURANT)) {
@@ -1039,7 +1305,7 @@ public class Facility extends Portal implements XML, Constants{
 	
 	private Facility getValidData(Facility facility, String locale, Document document) {
 		if(locale.equals("es_ES")) {
-			log.info("Antes de activities");
+			
 			//Validando Activities
 			if(facility.type.equalsIgnoreCase(ACTIVITIES)) {
 				facility.yoga = document.valueOf("//dynamic-element[@name='Yoga']/dynamic-content[@language-id='"+locale+"']/text()");
@@ -1079,7 +1345,7 @@ public class Facility extends Portal implements XML, Constants{
 					facility.contenedorActivities += "<p> Aquaerobics </p>";
 				}
 				if(facility.zumba.equalsIgnoreCase("true")) {
-					facility.contenedorActivities += "<p> Zuma </p>";
+					facility.contenedorActivities += "<p> Zumba </p>";
 				}
 				if(facility.caminata.equalsIgnoreCase("true")) {
 					facility.contenedorActivities += "<p> Caminata </p>";
@@ -1156,8 +1422,11 @@ public class Facility extends Portal implements XML, Constants{
 				if(facility.cursosDeGolf.equalsIgnoreCase("true")) {
 					facility.contenedorActivities += "<p> Curso de golf </p>";
 				}
-				log.info("Activiades del hotel: "+ facility.contenedorActivities);
-			}
+				if(facility.pesca.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Pesca </p>";
+				}
+				
+			}// fin de activities
 			
 			//Validando Horarios
 			if(facility.type.equals("Fiesta Kids Club")) {
@@ -1219,6 +1488,128 @@ public class Facility extends Portal implements XML, Constants{
 			}
 			
 		}else if(locale.equals("en_US")) {
+			
+			//Validando Activities
+			if(facility.type.equalsIgnoreCase(ACTIVITIES)) {
+				facility.yoga = document.valueOf("//dynamic-element[@name='Yoga']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.aquaerobics = document.valueOf("//dynamic-element[@name='Aquaerobics']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.zumba = document.valueOf("//dynamic-element[@name='Zumba']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.caminata = document.valueOf("//dynamic-element[@name='Caminata']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.pingPong = document.valueOf("//dynamic-element[@name='PingPong']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.juegosDeDardos = document.valueOf("//dynamic-element[@name='JuegosDeDardos']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.mesaDeBillar = document.valueOf("//dynamic-element[@name='MesaDeBillar']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.bingo = document.valueOf("//dynamic-element[@name='Bingo']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.juegosDeMesa = document.valueOf("//dynamic-element[@name='JuegosDeMesa']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.clasesDeCocina = document.valueOf("//dynamic-element[@name='ClasesDeCocina']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.clasesDeBaile = document.valueOf("//dynamic-element[@name='ClasesDeBaile']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.clubDePlaya = document.valueOf("//dynamic-element[@name='ClubDePlaya']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.juegosDePlaya = document.valueOf("//dynamic-element[@name='JuegosDePlaya']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.musicaEnVivo = document.valueOf("//dynamic-element[@name='MusicaEnVivo']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.rentaDeBicicletas = document.valueOf("//dynamic-element[@name='RentaDeBicicletas']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.excursiones = document.valueOf("//dynamic-element[@name='Excursiones']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.tours = document.valueOf("//dynamic-element[@name='Tours']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.snorkel = document.valueOf("//dynamic-element[@name='Snorkel']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.kayak = document.valueOf("//dynamic-element[@name='Kayak']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.buceo = document.valueOf("//dynamic-element[@name='Buceo']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.catamaranyVelero = document.valueOf("//dynamic-element[@name='CatamaranyVelero']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.pesca = document.valueOf("//dynamic-element[@name='Pesca']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.actividadesMaritimas = document.valueOf("//dynamic-element[@name='ActividadesMaritimas']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.paddleBoard = document.valueOf("//dynamic-element[@name='PaddleBoard']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.deportesMotorizados = document.valueOf("//dynamic-element[@name='DeportesMotorizados']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.casino = document.valueOf("//dynamic-element[@name='Casino']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.paseoACaballo = document.valueOf("//dynamic-element[@name='PaseoACaballo']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.cataDeVinoTequila = document.valueOf("//dynamic-element[@name='CataDeVinoTequila']/dynamic-content[@language-id='"+locale+"']/text()");
+				facility.cursosDeGolf = document.valueOf("//dynamic-element[@name='CursosDeGolf']/dynamic-content[@language-id='"+locale+"']/text()");
+				
+				if(facility.yoga.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Yoga </p>";
+				}
+				if(facility.aquaerobics.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Aquaerobics </p>";
+				}
+				if(facility.zumba.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Zumba </p>";
+				}
+				if(facility.caminata.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Trekking </p>";
+				}
+				if(facility.pingPong.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Ping Pong </p>";
+				}
+				if(facility.juegosDeDardos.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Darts games </p>";
+				}
+				if(facility.mesaDeBillar.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> billiard table </p>";
+				}
+				if(facility.bingo.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Bingo </p>";
+				}
+				if(facility.juegosDeMesa.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Board games </p>";
+				}
+				if(facility.clasesDeCocina.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Cooking class </p>";
+				}
+				if(facility.clasesDeBaile.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Dance lessons </p>";
+				}
+				if(facility.clubDePlaya.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Beach club </p>";
+				}
+				if(facility.juegosDePlaya.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Beach games </p>";
+				}
+				if(facility.musicaEnVivo.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Live music </p>";
+				}
+				if(facility.rentaDeBicicletas.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Bicycle rental </p>";
+				}
+				if(facility.excursiones.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Excursions </p>";
+				}
+				if(facility.tours.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Tours </p>";
+				}
+				if(facility.snorkel.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Snorkel </p>";
+				}
+				if(facility.kayak.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Kayak </p>";
+				}
+				if(facility.buceo.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Diving </p>";
+				}
+				if(facility.catamaranyVelero.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Catamaran and sailboat </p>";
+				}
+				if(facility.actividadesMaritimas.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Maritime activities </p>";
+				}
+				if(facility.paddleBoard.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Paddle Board </p>";
+				}
+				if(facility.deportesMotorizados.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Motorized sports </p>";
+				}
+				if(facility.casino.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Casino </p>";
+				}
+				if(facility.paseoACaballo.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Horseback riding </p>";
+				}
+				if(facility.cataDeVinoTequila.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Wine/tequila tasting </p>";
+				}
+				if(facility.cursosDeGolf.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Golf courses </p>";
+				}
+				if(facility.pesca.equalsIgnoreCase("true")) {
+					facility.contenedorActivities += "<p> Fishing </p>";
+				}
+			}// fin de activities
+			
 			
 			if(facility.type.equals("Fiesta Kids Club")) {
 				//Validando Horarios
