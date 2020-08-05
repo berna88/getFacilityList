@@ -19,4 +19,5 @@ public interface Constants {
 	public final String TYPE_RESTAURANT = "Restaurant";
 	public final String TYPE_FIESTAKIDSCLUB = "Fiesta Kids Club";
 	public final String TYPE_BAR = "Bar";
+	public final String TYPE_ACTIVITIES = "Activities";
 }
