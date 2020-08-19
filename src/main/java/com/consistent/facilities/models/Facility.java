@@ -801,40 +801,40 @@ public class Facility extends Portal implements XML, Constants{
 				xMLStreamWriter.writeEndElement();
 			}
 			if (caminata != null && !caminata.isEmpty()) {
-				xMLStreamWriter.writeStartElement("caminata");
+				xMLStreamWriter.writeStartElement("trekking");
 				xMLStreamWriter.writeCharacters(caminata);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("caminata");
+				xMLStreamWriter.writeStartElement("trekking");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (pingPong != null && !pingPong.isEmpty()) {
-				xMLStreamWriter.writeStartElement("pingpong");
+				xMLStreamWriter.writeStartElement("pingPong");
 				xMLStreamWriter.writeCharacters(pingPong);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("pingpong");
+				xMLStreamWriter.writeStartElement("pingPong");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			
 			if (juegosDeDardos != null && !juegosDeDardos.isEmpty()) {
-				xMLStreamWriter.writeStartElement("juegosdedardos");
+				xMLStreamWriter.writeStartElement("dartsGames");
 				xMLStreamWriter.writeCharacters(juegosDeDardos);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("juegosDeDardos");
+				xMLStreamWriter.writeStartElement("dartsGames");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 	
 			if (mesaDeBillar != null && !mesaDeBillar.isEmpty()) {
-				xMLStreamWriter.writeStartElement("mesadebillar");
+				xMLStreamWriter.writeStartElement("billiardTable");
 				xMLStreamWriter.writeCharacters(mesaDeBillar);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("mesadebillar");
+				xMLStreamWriter.writeStartElement("billiardTable");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
@@ -848,77 +848,77 @@ public class Facility extends Portal implements XML, Constants{
 				xMLStreamWriter.writeEndElement();
 			}
 			if (juegosDeMesa != null && !juegosDeMesa.isEmpty()) {
-				xMLStreamWriter.writeStartElement("juegosdemesa");
+				xMLStreamWriter.writeStartElement("boardGames");
 				xMLStreamWriter.writeCharacters(juegosDeMesa);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("juegosdemesa");
+				xMLStreamWriter.writeStartElement("boardGames");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (clasesDeCocina != null && !clasesDeCocina.isEmpty()) {
-				xMLStreamWriter.writeStartElement("clasesdecocina");
+				xMLStreamWriter.writeStartElement("cookingClass");
 				xMLStreamWriter.writeCharacters(clasesDeCocina);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("clasesdecocina");
+				xMLStreamWriter.writeStartElement("cookingClass");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			
 			if (clasesDeBaile != null && !clasesDeBaile.isEmpty()) {
-				xMLStreamWriter.writeStartElement("clasesdebaile");
+				xMLStreamWriter.writeStartElement("danceLessons");
 				xMLStreamWriter.writeCharacters(clasesDeBaile);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("clasesdebaile");
+				xMLStreamWriter.writeStartElement("danceLessons");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (clubDePlaya != null && !clubDePlaya.isEmpty()) {
-				xMLStreamWriter.writeStartElement("clubdeplaya");
+				xMLStreamWriter.writeStartElement("beachClub");
 				xMLStreamWriter.writeCharacters(clubDePlaya);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("clubdeplaya");
+				xMLStreamWriter.writeStartElement("beachClub");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (juegosDePlaya != null && !juegosDePlaya.isEmpty()) {
-				xMLStreamWriter.writeStartElement("juegosdeplaya");
+				xMLStreamWriter.writeStartElement("beachGames");
 				xMLStreamWriter.writeCharacters(juegosDePlaya);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("juegosdeplaya");
+				xMLStreamWriter.writeStartElement("beachGames");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			
 			if (musicaEnVivo != null && !musicaEnVivo.isEmpty()) {
-				xMLStreamWriter.writeStartElement("musicaenvivo");
+				xMLStreamWriter.writeStartElement("liveMusic");
 				xMLStreamWriter.writeCharacters(musicaEnVivo);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("musicaenvivo");
+				xMLStreamWriter.writeStartElement("liveMusic");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			
 			if (rentaDeBicicletas != null && !rentaDeBicicletas.isEmpty()) {
-				xMLStreamWriter.writeStartElement("rentadebicicletas");
+				xMLStreamWriter.writeStartElement("bicycleRental");
 				xMLStreamWriter.writeCharacters(rentaDeBicicletas);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("rentadebicicletas");
+				xMLStreamWriter.writeStartElement("bicycleRental");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (excursiones != null && !excursiones.isEmpty()) {
-				xMLStreamWriter.writeStartElement("excursiones");
+				xMLStreamWriter.writeStartElement("excursions");
 				xMLStreamWriter.writeCharacters(excursiones);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("excursiones");
+				xMLStreamWriter.writeStartElement("excursions");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
@@ -931,8 +931,6 @@ public class Facility extends Portal implements XML, Constants{
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
-			
-
 			if (snorkel != null && !snorkel.isEmpty()) {
 				xMLStreamWriter.writeStartElement("snorkel");
 				xMLStreamWriter.writeCharacters(snorkel);
@@ -953,59 +951,59 @@ public class Facility extends Portal implements XML, Constants{
 				xMLStreamWriter.writeEndElement();
 			}
 			if (buceo != null && !buceo.isEmpty()) {
-				xMLStreamWriter.writeStartElement("buceo");
+				xMLStreamWriter.writeStartElement("diving");
 				xMLStreamWriter.writeCharacters(buceo);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("buceo");
+				xMLStreamWriter.writeStartElement("diving");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (catamaranyVelero != null && !catamaranyVelero.isEmpty()) {
-				xMLStreamWriter.writeStartElement("catamaranyvelero");
+				xMLStreamWriter.writeStartElement("catamaranAndSailboat");
 				xMLStreamWriter.writeCharacters(catamaranyVelero);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("catamaranyvelero");
+				xMLStreamWriter.writeStartElement("catamaranAndSailboat");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			
 			if (pesca != null && !pesca.isEmpty()) {
-				xMLStreamWriter.writeStartElement("pesca");
+				xMLStreamWriter.writeStartElement("fishing");
 				xMLStreamWriter.writeCharacters(pesca);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("pesca");
+				xMLStreamWriter.writeStartElement("fishing");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (actividadesMaritimas != null && !actividadesMaritimas.isEmpty()) {
-				xMLStreamWriter.writeStartElement("actividadesmaritimas");
+				xMLStreamWriter.writeStartElement("maritimeActivities");
 				xMLStreamWriter.writeCharacters(actividadesMaritimas);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("actividadesmaritimas");
+				xMLStreamWriter.writeStartElement("maritimeActivities");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (paddleBoard != null && !paddleBoard.isEmpty()) {
-				xMLStreamWriter.writeStartElement("paddleboard");
+				xMLStreamWriter.writeStartElement("paddleBoard");
 				xMLStreamWriter.writeCharacters(paddleBoard);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("paddleboard");
+				xMLStreamWriter.writeStartElement("paddleBoard");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			
 
 			if (deportesMotorizados != null && !deportesMotorizados.isEmpty()) {
-				xMLStreamWriter.writeStartElement("deportesmotorizados");
+				xMLStreamWriter.writeStartElement("motorizedSports");
 				xMLStreamWriter.writeCharacters(deportesMotorizados);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("deportesmotorizados");
+				xMLStreamWriter.writeStartElement("motorizedSports");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
@@ -1020,29 +1018,29 @@ public class Facility extends Portal implements XML, Constants{
 				xMLStreamWriter.writeEndElement();
 			}
 			if (paseoACaballo != null && !paseoACaballo.isEmpty()) {
-				xMLStreamWriter.writeStartElement("paseoacaballo");
+				xMLStreamWriter.writeStartElement("horsebackRiding");
 				xMLStreamWriter.writeCharacters(paseoACaballo);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("paseoacaballo");
+				xMLStreamWriter.writeStartElement("horsebackRiding");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (cataDeVinoTequila != null && !cataDeVinoTequila.isEmpty()) {
-				xMLStreamWriter.writeStartElement("catadevinotequila");
+				xMLStreamWriter.writeStartElement("wineTequilaTasting");
 				xMLStreamWriter.writeCharacters(cataDeVinoTequila);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("catamaranyvelero");
+				xMLStreamWriter.writeStartElement("wineTequilaTasting");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
 			if (cursosDeGolf != null && !cursosDeGolf.isEmpty()) {
-				xMLStreamWriter.writeStartElement("cursosdegolf");
+				xMLStreamWriter.writeStartElement("golfCourses");
 				xMLStreamWriter.writeCharacters(cursosDeGolf);
 				xMLStreamWriter.writeEndElement();
 			}else {
-				xMLStreamWriter.writeStartElement("cursosdegolf");
+				xMLStreamWriter.writeStartElement("golfCourses");
 				xMLStreamWriter.writeCharacters("false");
 				xMLStreamWriter.writeEndElement();
 			}
